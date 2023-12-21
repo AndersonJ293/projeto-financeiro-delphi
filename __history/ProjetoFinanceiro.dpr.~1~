@@ -1,0 +1,14 @@
+program ProjetoFinanceiro;
+
+uses
+  Vcl.Forms,
+  ProjetoFinanceiro.View.Principal in 'src\ProjetoFinanceiro.View.Principal.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2023/12/21 11:25:22.583,=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\Unit1.pas</Transaction>
+    <Transaction>2023/12/21 11:26:23.357,C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\src\ProjetoFinanceiro.View.Principal.pas=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\Unit1.pas</Transaction>
+    <Transaction>2023/12/21 11:26:23.357,C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\src\ProjetoFinanceiro.View.Principal.dfm=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\Unit1.dfm</Transaction>
+    <Transaction>2023/12/21 11:26:54.866,C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\ProjetoFinanceiro.dproj=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\Project1.dproj</Transaction>
+    <Transaction>2023/12/21 11:28:54.016,=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\src\View\ProjetoFinanceiro.View.Principal.pas</Transaction>
+    <Transaction>2023/12/21 11:45:57.691,=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\Unit1.pas</Transaction>
+    <Transaction>2023/12/21 11:46:29.309,C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\src\View\ProjetoFinanceiro.View.CadastroPadrao.dfm=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\Unit1.dfm</Transaction>
+    <Transaction>2023/12/21 11:46:29.309,C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\src\View\ProjetoFinanceiro.View.CadastroPadrao.pas=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\Unit1.pas</Transaction>
+  </Transactions>
+  <ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="src"/>
+    <File Path="src\View"/>
+    <File Path="src\View\ProjetoFinanceiro.View.CadastroPadrao.pas"/>
+    <File Path="src\View\ProjetoFinanceiro.View.CadastroPadrao.dfm"/>
+    <File Path="src\View\ProjetoFinanceiro.View.Principal.pas"/>
+    <File Path="src\View\ProjetoFinanceiro.View.Principal.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>
