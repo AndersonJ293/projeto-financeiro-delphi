@@ -1,10 +1,10 @@
 object FormSplash: TFormSplash
   Left = 0
   Top = 0
-  BorderStyle = bsSingle
+  BorderStyle = bsNone
   Caption = 'FormSplash'
-  ClientHeight = 542
-  ClientWidth = 720
+  ClientHeight = 370
+  ClientWidth = 732
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,8 +16,8 @@ object FormSplash: TFormSplash
   object PnlPrincipal: TPanel
     Left = 0
     Top = 0
-    Width = 720
-    Height = 542
+    Width = 732
+    Height = 370
     Align = alClient
     BevelOuter = bvNone
     Color = clSkyBlue
@@ -26,16 +26,16 @@ object FormSplash: TFormSplash
     Font.Height = -33
     Font.Name = 'Segoe UI'
     Font.Style = []
-    Padding.Top = 20
-    Padding.Bottom = 50
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
     StyleName = 'Windows'
+    ExplicitWidth = 720
+    ExplicitHeight = 542
     object ImgLogo: TImage
       Left = 0
-      Top = 20
-      Width = 720
+      Top = 0
+      Width = 732
       Height = 256
       Align = alTop
       Center = True
@@ -402,30 +402,35 @@ object FormSplash: TFormSplash
         C98DEC553D56F4E429D2B838171F7BF58CBD3A58673FA27AE010BBC601262E3B
         232BE1B8DBF76607FF1F6C1F5014DB6B159E0000000049454E44AE426082}
       ExplicitTop = 30
+      ExplicitWidth = 720
     end
-    object LblNomeAplicacao: TLabel
-      AlignWithMargins = True
-      Left = 318
-      Top = 423
-      Width = 94
+    object LblStatus: TLabel
+      Left = 0
+      Top = 342
+      Width = 732
       Height = 23
-      Margins.Top = 30
+      Margins.Top = 10
+      Align = alBottom
       Alignment = taCenter
-      Caption = 'Carregando'
+      Caption = 'Carregando...'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clBlack
       Font.Height = -17
       Font.Name = 'Segoe UI'
       Font.Style = [fsBold]
       ParentFont = False
+      ExplicitLeft = 3
+      ExplicitTop = 328
+      ExplicitWidth = 109
     end
     object Label1: TLabel
       AlignWithMargins = True
       Left = 3
-      Top = 306
-      Width = 714
+      Top = 256
+      Width = 726
       Height = 62
-      Margins.Top = 30
+      Margins.Top = 0
+      Margins.Bottom = 0
       Align = alTop
       Alignment = taCenter
       Caption = 'Sistema Financeiro'
@@ -435,14 +440,30 @@ object FormSplash: TFormSplash
       Font.Name = 'Segoe UI'
       Font.Style = [fsBold]
       ParentFont = False
-      ExplicitWidth = 411
+      ExplicitLeft = 0
+      ExplicitTop = 232
     end
     object ProgressBar1: TProgressBar
-      Left = 64
-      Top = 452
-      Width = 600
-      Height = 40
+      Left = 0
+      Top = 365
+      Width = 732
+      Height = 5
+      Align = alBottom
+      DoubleBuffered = True
+      ParentDoubleBuffered = False
+      Smooth = True
+      MarqueeInterval = 5
+      BarColor = clNone
+      BackgroundColor = clHotLight
+      Step = 1
       TabOrder = 0
+      StyleName = 'Windows'
     end
+  end
+  object TimerSplash: TTimer
+    Interval = 50
+    OnTimer = TimerSplashTimer
+    Left = 16
+    Top = 304
   end
 end

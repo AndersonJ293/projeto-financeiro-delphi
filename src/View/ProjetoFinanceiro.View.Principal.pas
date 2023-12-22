@@ -4,7 +4,7 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Winapi.CommCtrl;
 
 type
   TFormPrincipal = class(TForm)
@@ -40,7 +40,6 @@ end;
 procedure TFormPrincipal.FormCreate(Sender: TObject);
 begin
   FormSplash := TFormSplash.Create(nil);
-
   try
     FormSplash.ShowModal;
   finally

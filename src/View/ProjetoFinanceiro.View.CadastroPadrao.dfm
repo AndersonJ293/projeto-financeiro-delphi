@@ -20,7 +20,7 @@ object FormCadastroPadrao: TFormCadastroPadrao
     Width = 720
     Height = 542
     Align = alClient
-    ActiveCard = CardCadastro
+    ActiveCard = CardPesquisa
     Caption = 'PnlPrincipal'
     TabOrder = 0
     ExplicitWidth = 714
@@ -33,6 +33,8 @@ object FormCadastroPadrao: TFormCadastroPadrao
       Caption = 'CardCadastro'
       CardIndex = 0
       TabOrder = 0
+      ExplicitWidth = 712
+      ExplicitHeight = 531
       object Panel1: TPanel
         Left = 0
         Top = 460
@@ -41,6 +43,8 @@ object FormCadastroPadrao: TFormCadastroPadrao
         Align = alBottom
         BorderWidth = 10
         TabOrder = 0
+        ExplicitTop = 451
+        ExplicitWidth = 712
         object ButtonCancelar: TButton
           Left = 577
           Top = 20
@@ -78,8 +82,6 @@ object FormCadastroPadrao: TFormCadastroPadrao
       Caption = 'CardPesquisa'
       CardIndex = 1
       TabOrder = 1
-      ExplicitWidth = 712
-      ExplicitHeight = 531
       object PnlPesquisa: TPanel
         Left = 0
         Top = 0
@@ -87,7 +89,6 @@ object FormCadastroPadrao: TFormCadastroPadrao
         Height = 80
         Align = alTop
         TabOrder = 0
-        ExplicitWidth = 712
         object Label1: TLabel
           Left = 10
           Top = 3
@@ -124,8 +125,9 @@ object FormCadastroPadrao: TFormCadastroPadrao
         Height = 80
         Align = alBottom
         TabOrder = 1
-        ExplicitTop = 451
-        ExplicitWidth = 712
+        DesignSize = (
+          718
+          80)
         object ButtonFechar: TButton
           Left = 577
           Top = 20
@@ -160,6 +162,7 @@ object FormCadastroPadrao: TFormCadastroPadrao
           Width = 130
           Height = 40
           Cursor = crHandPoint
+          Anchors = [akLeft, akTop, akRight]
           Caption = 'Incluir'
           ImageAlignment = iaRight
           ImageIndex = 1
@@ -202,8 +205,6 @@ object FormCadastroPadrao: TFormCadastroPadrao
         Height = 380
         Align = alClient
         TabOrder = 2
-        ExplicitWidth = 712
-        ExplicitHeight = 371
         object DBGrid1: TDBGrid
           Left = 1
           Top = 1
