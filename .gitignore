@@ -23,8 +23,11 @@
 *Resource.rc
 
 # Delphi local files (user-specific info)
-/bin
+/bin/*
+!/bin/ProjetoFinanceiro.cfg
 /dcu
+/db/*
+!/db/SistemaFinanceiro
 
 # Delphi history and backups
 __history/

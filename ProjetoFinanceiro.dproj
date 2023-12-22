@@ -114,6 +114,15 @@
             <Form>FormSplash</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="src\Model\ProjetoFinanceiro.Model.Conexao.pas">
+            <Form>DmConexao</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="src\View\ProjetoFinanceiro.View.Usuarios.pas">
+            <Form>FormUsuarios</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

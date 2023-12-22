@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Winapi.CommCtrl;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Winapi.CommCtrl,
+  ProjetoFinanceiro.View.Usuarios;
 
 type
   TFormPrincipal = class(TForm)
@@ -12,9 +13,9 @@ type
     Cadastros: TMenuItem;
     Relatórios: TMenuItem;
     MenuAjuda: TMenuItem;
-    CadastroPadrao: TMenuItem;
-    procedure CadastroPadraoClick(Sender: TObject);
+    CadastroUsuario: TMenuItem;
     procedure FormCreate(Sender: TObject);
+    procedure CadastroUsuarioClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -32,9 +33,9 @@ uses
 
 {$R *.dfm}
 
-procedure TFormPrincipal.CadastroPadraoClick(Sender: TObject);
+procedure TFormPrincipal.CadastroUsuarioClick(Sender: TObject);
 begin
-  FormCadastroPadrao.Show;
+   FormUsuarios.Show;
 end;
 
 procedure TFormPrincipal.FormCreate(Sender: TObject);

@@ -19,9 +19,9 @@
     Top = 96
     object Cadastros: TMenuItem
       Caption = 'Cadastros'
-      object CadastroPadrao: TMenuItem
-        Caption = 'Cadastro Padr'#227'o'
-        OnClick = CadastroPadraoClick
+      object CadastroUsuario: TMenuItem
+        Caption = 'Usu'#225'rios'
+        OnClick = CadastroUsuarioClick
       end
     end
     object Relatórios: TMenuItem

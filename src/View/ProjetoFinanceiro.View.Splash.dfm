@@ -30,8 +30,6 @@ object FormSplash: TFormSplash
     ParentFont = False
     TabOrder = 0
     StyleName = 'Windows'
-    ExplicitWidth = 720
-    ExplicitHeight = 542
     object ImgLogo: TImage
       Left = 0
       Top = 0
@@ -419,8 +417,6 @@ object FormSplash: TFormSplash
       Font.Name = 'Segoe UI'
       Font.Style = [fsBold]
       ParentFont = False
-      ExplicitLeft = 3
-      ExplicitTop = 328
       ExplicitWidth = 109
     end
     object Label1: TLabel
@@ -440,8 +436,7 @@ object FormSplash: TFormSplash
       Font.Name = 'Segoe UI'
       Font.Style = [fsBold]
       ParentFont = False
-      ExplicitLeft = 0
-      ExplicitTop = 232
+      ExplicitWidth = 411
     end
     object ProgressBar1: TProgressBar
       Left = 0
@@ -455,13 +450,13 @@ object FormSplash: TFormSplash
       MarqueeInterval = 5
       BarColor = clNone
       BackgroundColor = clHotLight
-      Step = 1
+      Step = 2
       TabOrder = 0
       StyleName = 'Windows'
     end
   end
   object TimerSplash: TTimer
-    Interval = 50
+    Interval = 20
     OnTimer = TimerSplashTimer
     Left = 16
     Top = 304
