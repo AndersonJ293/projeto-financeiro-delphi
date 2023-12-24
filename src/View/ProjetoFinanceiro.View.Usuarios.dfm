@@ -3,7 +3,6 @@ inherited FormUsuarios: TFormUsuarios
   OnShow = FormShow
   TextHeight = 28
   inherited PnlPrincipal: TCardPanel
-    ActiveCard = CardCadastro
     ExplicitWidth = 720
     ExplicitHeight = 542
     inherited CardCadastro: TCard
@@ -321,6 +320,7 @@ inherited FormUsuarios: TFormUsuarios
         end
         inherited ButtonExcluir: TButton
           Left = 293
+          OnClick = ButtonExcluirClick
           ExplicitLeft = 293
         end
       end

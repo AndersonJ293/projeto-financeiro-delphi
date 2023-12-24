@@ -1,10 +1,11 @@
 object DmConexao: TDmConexao
   OnCreate = DataModuleCreate
   OnDestroy = DataModuleDestroy
-  Height = 600
-  Width = 800
+  Height = 750
+  Width = 1000
+  PixelsPerInch = 120
   object SQLConexao: TFDConnection
-    Left = 38
-    Top = 26
+    Left = 48
+    Top = 33
   end
 end

@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, ProjetoFinanceiro.View.CadastroPadrao,
   Data.DB, System.ImageList, Vcl.ImgList, Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls,
-  Vcl.ExtCtrls, Vcl.WinXPanels, ProjetoFinanceiro.Model.Usuarios, Vcl.WinXCtrls;
+  Vcl.ExtCtrls, Vcl.WinXPanels, ProjetoFinanceiro.Model.Usuarios, Vcl.WinXCtrls,
+  ProjetoFinanceiro.Util.GeradorId;
 
 type
   TFormUsuarios = class(TFormCadastroPadrao)
@@ -37,8 +38,11 @@ type
     procedure ButtonIncluirClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure ButtonSalvarClick(Sender: TObject);
+    procedure ButtonCancelarClick(Sender: TObject);
+    procedure ButtonExcluirClick(Sender: TObject);
   private
     { Private declarations }
+    procedure LimparCampos;
   public
     { Public declarations }
   end;
@@ -67,16 +71,37 @@ begin
 
 end;
 
+procedure TFormUsuarios.ButtonCancelarClick(Sender: TObject);
+begin
+  DmUsuarios.CdsUsuarios.Cancel;
+  inherited;
+end;
+
+procedure TFormUsuarios.ButtonExcluirClick(Sender: TObject);
+begin
+  inherited;
+  if Application.MessageBox('Deseja realmente excluir o registro?', 'Pergunta',
+                                    MB_YESNO + MB_ICONQUESTION) <> mrYes
+  then exit;
+
+  try
+     DmUsuarios.CdsUsuarios.Delete;
+     DmUsuarios.CdsUsuarios.ApplyUpdates(0);
+     Application.MessageBox('Registro excluído com sucesso!', 'Aviso',
+                                   MB_OK + MB_ICONINFORMATION);
+  except on E : Exception do
+     Application.MessageBox(PWideChar(E.Message), 'Erro ao excluir o registro',
+                                                  MB_OK + MB_ICONERROR);
+  end;
+
+end;
+
 procedure TFormUsuarios.ButtonIncluirClick(Sender: TObject);
 begin
   inherited;
-  DmUsuarios.CdsUsuarios.Insert;
-
   LblTitulo.Caption := 'Adicionar Usuário';
-  EditNome.Text := '';
-  EditLogin.Text := '';
-  EditSenha.Text := '';
-  TglStatus.State := tssOn
+  LimparCampos;
+  DmUsuarios.CdsUsuarios.Insert;
 end;
 
 procedure TFormUsuarios.ButtonPesquisarClick(Sender: TObject);
@@ -85,9 +110,6 @@ begin
   DmUsuarios.CdsUsuarios.Close;
   DmUsuarios.CdsUsuarios.CommandText := 'Select * from usuarios';
   DmUsuarios.CdsUsuarios.Open;
-//  DmUsuarios.FDQuery1.SQL.Clear;
-//  DmUsuarios.FDQuery1.SQL.Add('Select * from usuarios');
-//  DmUsuarios.FDQuery1.Open;
 end;
 
 procedure TFormUsuarios.ButtonSalvarClick(Sender: TObject);
@@ -104,7 +126,7 @@ begin
 
   if Trim(EditLogin.Text) = '' then
   begin
-    EditNome.SetFocus;
+    EditLogin.SetFocus;
     Application.MessageBox('O campo login não pode ser vazio.', 'Atenção',
                               MB_OK + MB_ICONWARNING);
     abort;
@@ -112,16 +134,33 @@ begin
 
   if Trim(EditSenha.Text) = '' then
   begin
-    EditNome.SetFocus;
+    EditSenha.SetFocus;
     Application.MessageBox('O campo senha não pode ser vazio.', 'Atenção',
                               MB_OK + MB_ICONWARNING);
     abort;
   end;
 
+  if DmUsuarios.VerificaLoginCadastrado(Trim(EditLogin.Text),
+  DmUsuarios.CdsUsuarios.FieldByName('ID').AsString) then
+  begin
+    EditLogin.SetFocus;
+    Application.MessageBox(PWideChar(Format('O login %s já se encontra cadastrado.', [EditLogin.Text])),
+                                               'Atenção', MB_OK + MB_ICONWARNING);
+    abort;
+  end;
+
+
   LStatus := 'A';
 
   if TglStatus.State = tssOff then
      LStatus := 'I';
+
+  if DmUsuarios.CdsUsuarios.State in [dsInsert] then
+  begin
+    DmUsuarios.CdsUsuariosID.AsString := TUtilitario.GetID;
+    DmUsuarios.CdsUsuariosData_Cadastro.AsDateTime := now;
+  end;
+
 
   DmUsuarios.CdsUsuariosNome.AsString := Trim(EditNome.Text);
   DmUsuarios.CdsUsuariosLogin.AsString := Trim(EditLogin.Text);
@@ -143,4 +182,16 @@ begin
   PnlPrincipal.ActiveCard := CardPesquisa;
 end;
 
+procedure TFormUsuarios.LimparCampos;
+var Contador : integer;
+begin
+  for Contador := 0 to Pred(ComponentCount) do
+    begin
+      if Components[Contador] is TCustomEdit then
+         TCustomEdit(Components[Contador]).Clear
+      else if Components[Contador] is TToggleSwitch then
+         TToggleSwitch(Components[Contador]).State := tssON
+    end;
+
+end;
 end.

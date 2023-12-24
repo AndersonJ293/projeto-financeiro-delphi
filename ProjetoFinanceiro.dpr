@@ -7,7 +7,8 @@ uses
   ProjetoFinanceiro.View.Splash in 'src\View\ProjetoFinanceiro.View.Splash.pas' {FormSplash},
   ProjetoFinanceiro.Model.Conexao in 'src\Model\ProjetoFinanceiro.Model.Conexao.pas' {DmConexao: TDataModule},
   ProjetoFinanceiro.View.Usuarios in 'src\View\ProjetoFinanceiro.View.Usuarios.pas' {FormUsuarios},
-  ProjetoFinanceiro.Model.Usuarios in 'src\Model\ProjetoFinanceiro.Model.Usuarios.pas' {DmUsuarios: TDataModule};
+  ProjetoFinanceiro.Model.Usuarios in 'src\Model\ProjetoFinanceiro.Model.Usuarios.pas' {DmUsuarios: TDataModule},
+  ProjetoFinanceiro.Util.GeradorId in 'src\Util\ProjetoFinanceiro.Util.GeradorId.pas';
 
 {$R *.res}
 
