@@ -26,13 +26,14 @@ object FormSplash: TFormSplash
     Font.Height = -33
     Font.Name = 'Segoe UI'
     Font.Style = []
+    Padding.Top = 10
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
     StyleName = 'Windows'
     object ImgLogo: TImage
       Left = 0
-      Top = 0
+      Top = 10
       Width = 732
       Height = 256
       Align = alTop
@@ -405,7 +406,7 @@ object FormSplash: TFormSplash
     object LblStatus: TLabel
       Left = 0
       Top = 342
-      Width = 109
+      Width = 732
       Height = 23
       Margins.Top = 10
       Align = alBottom
@@ -417,12 +418,13 @@ object FormSplash: TFormSplash
       Font.Name = 'Segoe UI'
       Font.Style = [fsBold]
       ParentFont = False
+      ExplicitWidth = 109
     end
     object Label1: TLabel
       AlignWithMargins = True
       Left = 3
-      Top = 256
-      Width = 411
+      Top = 266
+      Width = 726
       Height = 62
       Margins.Top = 0
       Margins.Bottom = 0
@@ -435,6 +437,8 @@ object FormSplash: TFormSplash
       Font.Name = 'Segoe UI'
       Font.Style = [fsBold]
       ParentFont = False
+      ExplicitTop = 256
+      ExplicitWidth = 411
     end
     object ProgressBar1: TProgressBar
       Left = 0

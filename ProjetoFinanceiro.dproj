@@ -129,6 +129,11 @@
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="src\Util\ProjetoFinanceiro.Util.GeradorId.pas"/>
+        <DCCReference Include="src\View\ProjetoFinanceiro.View.Login.pas">
+            <Form>FormLogin</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="src\Model\Entidades\ProjetoFinanceiro.Model.Entidades.Usuario.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

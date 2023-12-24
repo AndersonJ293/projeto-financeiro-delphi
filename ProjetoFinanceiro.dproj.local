@@ -2,13 +2,13 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2023/12/21 11:25:22.000.583,=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\Unit1.pas</Transaction>
-    <Transaction>2023/12/21 11:26:23.000.357,C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\src\ProjetoFinanceiro.View.Principal.pas=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\Unit1.pas</Transaction>
     <Transaction>2023/12/21 11:26:23.000.357,C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\src\ProjetoFinanceiro.View.Principal.dfm=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\Unit1.dfm</Transaction>
+    <Transaction>2023/12/21 11:26:23.000.357,C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\src\ProjetoFinanceiro.View.Principal.pas=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\Unit1.pas</Transaction>
     <Transaction>2023/12/21 11:26:54.000.866,C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\ProjetoFinanceiro.dproj=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\Project1.dproj</Transaction>
     <Transaction>2023/12/21 11:28:54.000.016,=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\src\View\ProjetoFinanceiro.View.Principal.pas</Transaction>
     <Transaction>2023/12/21 11:45:57.000.691,=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\Unit1.pas</Transaction>
-    <Transaction>2023/12/21 11:46:29.000.309,C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\src\View\ProjetoFinanceiro.View.CadastroPadrao.dfm=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\Unit1.dfm</Transaction>
     <Transaction>2023/12/21 11:46:29.000.309,C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\src\View\ProjetoFinanceiro.View.CadastroPadrao.pas=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\Unit1.pas</Transaction>
+    <Transaction>2023/12/21 11:46:29.000.309,C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\src\View\ProjetoFinanceiro.View.CadastroPadrao.dfm=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\Unit1.dfm</Transaction>
     <Transaction>2023/12/21 17:32:04.000.826,=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\Unit1.pas</Transaction>
     <Transaction>2023/12/21 17:33:41.000.961,C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\Unit1.dfm=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\src\View\ProjetoFinanceiro.View.Splash.dfm</Transaction>
     <Transaction>2023/12/21 17:33:41.000.961,C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\Unit1.pas=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\src\View\ProjetoFinanceiro.View.Splash.pas</Transaction>
@@ -19,14 +19,21 @@
     <Transaction>2023/12/22 16:31:27.000.323,C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\Unit1.pas=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\src\View\ProjetoFinanceiro.View.Usuarios.pas</Transaction>
     <Transaction>2023/12/22 16:31:27.000.323,C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\Unit1.dfm=C:\Users\Conceito Tecnologia\Desktop\Nova pasta\Delphi\ProjetoFinanceiro\src\View\ProjetoFinanceiro.View.Usuarios.dfm</Transaction>
     <Transaction>2023/12/23 11:02:04.000.410,=C:\Users\acfaj\Documents\Embarcadero\Studio\Projects\projeto-financeiro-delphi\Unit1.pas</Transaction>
-    <Transaction>2023/12/23 11:02:29.000.457,C:\Users\acfaj\Documents\Embarcadero\Studio\Projects\projeto-financeiro-delphi\Unit1.dfm=C:\Users\acfaj\Documents\Embarcadero\Studio\Projects\projeto-financeiro-delphi\src\Model\ProjetoFinanceiro.Model.Usuarios.dfm</Transaction>
     <Transaction>2023/12/23 11:02:29.000.457,C:\Users\acfaj\Documents\Embarcadero\Studio\Projects\projeto-financeiro-delphi\Unit1.pas=C:\Users\acfaj\Documents\Embarcadero\Studio\Projects\projeto-financeiro-delphi\src\Model\ProjetoFinanceiro.Model.Usuarios.pas</Transaction>
-    <Transaction>2023/12/23 21:25:20.904,=C:\Users\acfaj\Documents\Embarcadero\Studio\Projects\projeto-financeiro-delphi\Unit1.pas</Transaction>
-    <Transaction>2023/12/23 21:26:33.769,C:\Users\acfaj\Documents\Embarcadero\Studio\Projects\projeto-financeiro-delphi\src\Util\ProjetoFinanceiro.Util.GeradorId.pas=C:\Users\acfaj\Documents\Embarcadero\Studio\Projects\projeto-financeiro-delphi\Unit1.pas</Transaction>
+    <Transaction>2023/12/23 11:02:29.000.457,C:\Users\acfaj\Documents\Embarcadero\Studio\Projects\projeto-financeiro-delphi\Unit1.dfm=C:\Users\acfaj\Documents\Embarcadero\Studio\Projects\projeto-financeiro-delphi\src\Model\ProjetoFinanceiro.Model.Usuarios.dfm</Transaction>
+    <Transaction>2023/12/23 21:25:20.000.904,=C:\Users\acfaj\Documents\Embarcadero\Studio\Projects\projeto-financeiro-delphi\Unit1.pas</Transaction>
+    <Transaction>2023/12/23 21:26:33.000.769,C:\Users\acfaj\Documents\Embarcadero\Studio\Projects\projeto-financeiro-delphi\src\Util\ProjetoFinanceiro.Util.GeradorId.pas=C:\Users\acfaj\Documents\Embarcadero\Studio\Projects\projeto-financeiro-delphi\Unit1.pas</Transaction>
+    <Transaction>2023/12/24 17:58:23.444,=C:\Users\acfaj\Documents\Embarcadero\Studio\Projects\projeto-financeiro-delphi\Unit1.pas</Transaction>
+    <Transaction>2023/12/24 17:58:34.766,C:\Users\acfaj\Documents\Embarcadero\Studio\Projects\projeto-financeiro-delphi\src\View\ProjetoFinanceiro.View.Login.pas=C:\Users\acfaj\Documents\Embarcadero\Studio\Projects\projeto-financeiro-delphi\Unit1.pas</Transaction>
+    <Transaction>2023/12/24 17:58:34.766,C:\Users\acfaj\Documents\Embarcadero\Studio\Projects\projeto-financeiro-delphi\src\View\ProjetoFinanceiro.View.Login.dfm=C:\Users\acfaj\Documents\Embarcadero\Studio\Projects\projeto-financeiro-delphi\Unit1.dfm</Transaction>
+    <Transaction>2023/12/24 19:35:54.426,=C:\Users\acfaj\Documents\Embarcadero\Studio\Projects\projeto-financeiro-delphi\Unit1.pas</Transaction>
+    <Transaction>2023/12/24 19:37:47.400,C:\Users\acfaj\Documents\Embarcadero\Studio\Projects\projeto-financeiro-delphi\src\Model\Entidades\ProjetoFinanceiro.Model.Entidades.Usuario.pas=C:\Users\acfaj\Documents\Embarcadero\Studio\Projects\projeto-financeiro-delphi\Unit1.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="src"/>
     <File Path="src\Model"/>
+    <File Path="src\Model\Entidades"/>
+    <File Path="src\Model\Entidades\ProjetoFinanceiro.Model.Entidades.Usuario.pas"/>
     <File Path="src\Model\ProjetoFinanceiro.Model.Conexao.pas"/>
     <File Path="src\Model\ProjetoFinanceiro.Model.Conexao.dfm"/>
     <File Path="src\Model\ProjetoFinanceiro.Model.Usuarios.pas"/>
@@ -42,5 +49,7 @@
     <File Path="src\View\ProjetoFinanceiro.View.Splash.dfm"/>
     <File Path="src\View\ProjetoFinanceiro.View.Usuarios.pas"/>
     <File Path="src\View\ProjetoFinanceiro.View.Usuarios.dfm"/>
+    <File Path="src\View\ProjetoFinanceiro.View.Login.pas"/>
+    <File Path="src\View\ProjetoFinanceiro.View.Login.dfm"/>
   </ProjectSortOrder>
 </BorlandProject>

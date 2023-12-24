@@ -1,18 +1,19 @@
 object DmUsuarios: TDmUsuarios
-  Height = 600
-  Width = 800
-  PixelsPerInch = 120
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  Height = 480
+  Width = 640
   object SqlUsuarios: TFDQuery
     Connection = DmConexao.SQLConexao
-    Left = 30
-    Top = 10
+    Left = 24
+    Top = 8
   end
   object CdsUsuarios: TClientDataSet
     Aggregates = <>
     Params = <>
     ProviderName = 'DspUsuarios'
-    Left = 130
-    Top = 10
+    Left = 104
+    Top = 8
     object CdsUsuariosID: TStringField
       FieldName = 'ID'
       Size = 36
@@ -38,7 +39,7 @@ object DmUsuarios: TDmUsuarios
   object DspUsuarios: TDataSetProvider
     DataSet = SqlUsuarios
     Options = [poAllowCommandText, poUseQuoteChar]
-    Left = 230
-    Top = 10
+    Left = 184
+    Top = 8
   end
 end

@@ -1,14 +1,17 @@
 inherited FormUsuarios: TFormUsuarios
   Caption = 'Cadastro de Usu'#225'rios'
+  ClientWidth = 720
   OnShow = FormShow
+  ExplicitHeight = 579
   TextHeight = 28
   inherited PnlPrincipal: TCardPanel
-    ExplicitWidth = 720
-    ExplicitHeight = 542
+    Width = 720
+    ExplicitHeight = 540
     inherited CardCadastro: TCard
+      Width = 718
       Alignment = taLeftJustify
       Padding.Top = 30
-      ExplicitHeight = 531
+      ExplicitHeight = 539
       object LblTitulo: TLabel [0]
         Left = 0
         Top = 30
@@ -26,8 +29,8 @@ inherited FormUsuarios: TFormUsuarios
         ExplicitWidth = 246
       end
       inherited Panel1: TPanel
-        ExplicitTop = 451
-        ExplicitWidth = 712
+        Top = 459
+        ExplicitTop = 459
         inherited ButtonSalvar: TButton
           OnClick = ButtonSalvarClick
         end
@@ -88,9 +91,6 @@ inherited FormUsuarios: TFormUsuarios
             BorderStyle = bsNone
             TabOrder = 0
             TextHint = 'Senha'
-            ExplicitTop = 3
-            ExplicitWidth = 294
-            ExplicitHeight = 35
           end
         end
       end
@@ -191,9 +191,6 @@ inherited FormUsuarios: TFormUsuarios
             BorderStyle = bsNone
             TabOrder = 0
             TextHint = 'Nome'
-            ExplicitTop = 3
-            ExplicitWidth = 294
-            ExplicitHeight = 35
           end
         end
       end
@@ -252,15 +249,15 @@ inherited FormUsuarios: TFormUsuarios
             BorderStyle = bsNone
             TabOrder = 0
             TextHint = 'Login'
-            ExplicitWidth = 294
           end
         end
       end
     end
     inherited CardPesquisa: TCard
-      ExplicitWidth = 718
+      Width = 718
+      ExplicitHeight = 538
       inherited PnlPesquisa: TPanel
-        ExplicitWidth = 718
+        Width = 718
         inherited ButtonPesquisar: TButton [1]
           TabOrder = 0
           OnClick = ButtonPesquisarClick
@@ -310,13 +307,14 @@ inherited FormUsuarios: TFormUsuarios
         end
       end
       inherited PnlPesquisaBotoes: TPanel
-        ExplicitWidth = 718
+        Width = 718
+        ExplicitTop = 458
         inherited ButtonAlterar: TButton
           Left = 151
           ExplicitLeft = 151
         end
         inherited ButtonIncluir: TButton
-          ExplicitWidth = 130
+          ExplicitWidth = 122
         end
         inherited ButtonExcluir: TButton
           Left = 293
@@ -325,15 +323,16 @@ inherited FormUsuarios: TFormUsuarios
         end
       end
       inherited PnlGrid: TPanel
-        ExplicitWidth = 718
-        ExplicitHeight = 371
+        Width = 718
+        ExplicitHeight = 378
         inherited DBGrid1: TDBGrid
+          Height = 377
           DataSource = DataSource1
           Columns = <
             item
               Expanded = False
               FieldName = 'Nome'
-              Width = 399
+              Width = 394
               Visible = True
             end
             item
