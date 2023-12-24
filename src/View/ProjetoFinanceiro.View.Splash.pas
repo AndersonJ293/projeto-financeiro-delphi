@@ -1,4 +1,4 @@
-unit ProjetoFinanceiro.View.Splash;
+ï»¿unit ProjetoFinanceiro.View.Splash;
 
 interface
 
@@ -36,9 +36,9 @@ begin
     begin
       ProgressBar1.StepIt;
       case ProgressBar1.Position of
-        10: LblStatus.Caption := 'Carregando depedências';
+        10: LblStatus.Caption := 'Carregando depedÃªncias';
         25: LblStatus.Caption := 'Conectando ao banco de dados...';
-        45: LblStatus.Caption := 'Carregando as configurações...';
+        45: LblStatus.Caption := 'Carregando as configuraÃ§Ã´es...';
         75: LblStatus.Caption := 'Iniciando o sistema...';
       end;
     end;

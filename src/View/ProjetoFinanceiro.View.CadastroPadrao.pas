@@ -64,5 +64,4 @@ procedure TFormCadastroPadrao.ButtonIncluirClick(Sender: TObject);
 begin
   PnlPrincipal.ActiveCard := CardCadastro;
 end;
-
 end.

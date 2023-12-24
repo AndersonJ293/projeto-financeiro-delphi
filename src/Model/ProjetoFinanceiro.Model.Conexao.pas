@@ -1,4 +1,4 @@
-unit ProjetoFinanceiro.Model.Conexao;
+Ôªøunit ProjetoFinanceiro.Model.Conexao;
 
 interface
 
@@ -13,7 +13,6 @@ uses
 
 type
   TDmConexao = class(TDataModule)
-    FDQuery1: TFDQuery;
     SQLConexao: TFDConnection;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
@@ -48,7 +47,7 @@ begin
   SQLConexao.Params.Clear;
   
   if not FileExists(ARQUIVOCONFIGURACAO) then
-    raise Exception.Create('Arquivo de confiraÁ„o n„o encontrado...');
+    raise Exception.Create('Arquivo de confira√ß√£o n√£o encontrado...');
 
   ListaParametros := TStringList.Create;
   try

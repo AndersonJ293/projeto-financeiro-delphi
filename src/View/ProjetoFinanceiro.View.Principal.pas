@@ -1,4 +1,4 @@
-unit ProjetoFinanceiro.View.Principal;
+ï»¿unit ProjetoFinanceiro.View.Principal;
 
 interface
 
@@ -11,7 +11,6 @@ type
   TFormPrincipal = class(TForm)
     MainMenu1: TMainMenu;
     Cadastros: TMenuItem;
-    Relatórios: TMenuItem;
     MenuAjuda: TMenuItem;
     CadastroUsuario: TMenuItem;
     procedure FormCreate(Sender: TObject);

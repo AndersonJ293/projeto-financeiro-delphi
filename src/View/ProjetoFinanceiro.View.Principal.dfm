@@ -2,7 +2,7 @@
   Left = 0
   Top = 0
   Caption = 'Projeto Financeiro'
-  ClientHeight = 517
+  ClientHeight = 522
   ClientWidth = 720
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -15,8 +15,8 @@
   OnCreate = FormCreate
   TextHeight = 15
   object MainMenu1: TMainMenu
-    Left = 360
-    Top = 96
+    Left = 344
+    Top = 248
     object Cadastros: TMenuItem
       Caption = 'Cadastros'
       object CadastroUsuario: TMenuItem

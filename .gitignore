@@ -24,7 +24,6 @@
 
 # Delphi local files (user-specific info)
 /bin/*
-!/bin/ProjetoFinanceiro.cfg
 /dcu
 /db/*
 
