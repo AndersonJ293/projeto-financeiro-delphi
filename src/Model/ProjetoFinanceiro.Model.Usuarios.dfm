@@ -36,6 +36,10 @@ object DmUsuarios: TDmUsuarios
     object CdsUsuariosData_Cadastro: TDateField
       FieldName = 'Data_Cadastro'
     end
+    object CdsUsuariosSenha_Temporaria: TStringField
+      FieldName = 'Senha_Temporaria'
+      Size = 1
+    end
   end
   object DspUsuarios: TDataSetProvider
     DataSet = SqlUsuarios

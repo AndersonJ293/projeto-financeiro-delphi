@@ -20,6 +20,7 @@ type
     CdsUsuariosSenha: TStringField;
     CdsUsuariosStatus: TStringField;
     CdsUsuariosData_Cadastro: TDateField;
+    CdsUsuariosSenha_Temporaria: TStringField;
     procedure DataModuleCreate(Sender: TObject);
     procedure DataModuleDestroy(Sender: TObject);
   private
@@ -30,6 +31,9 @@ type
     function VerificaLoginCadastrado(Login : String; ID : String) : Boolean;
     procedure EfetuarLogin(Login: String; Senha: String);
     function GetUsuarioLogado : TModelEntidadeUsuario;
+    procedure LimparSenha(IDUsuario: String);
+    procedure RedefinirSenha(Usuario: TModelEntidadeUsuario);
+    const TEMP_PASSWORD = '123456';
   end;
 
 var
@@ -79,6 +83,9 @@ begin
        FEntidadeUsuario.ID := SQLConsulta.FieldByName('ID').AsString;
        FEntidadeUsuario.Login := SQLConsulta.FieldByName('LOGIN').AsString;
        FEntidadeUsuario.Nome := SQLConsulta.FieldByName('NOME').AsString;
+       FEntidadeUsuario.Senha := SQLConsulta.FieldByName('SENHA').AsString;
+       FEntidadeUsuario.SenhaTemporaria :=
+        SQLConsulta.FieldByName('SENHA_TEMPORARIA').AsString = 'S';
    finally
        SQLConsulta.Close;
        SQLConsulta.Free;
@@ -88,6 +95,46 @@ end;
 function TDmUsuarios.GetUsuarioLogado: TModelEntidadeUsuario;
 begin
   Result := FEntidadeUsuario;
+end;
+
+procedure TDmUsuarios.LimparSenha(IDUsuario: String);
+var
+  SQLQuery : TFDQuery;
+begin
+  SQLQuery := TFDQuery.Create(nil);
+  try
+    SQLQuery.Connection := DmConexao.SQLConexao;
+    SQLQuery.SQL.Clear;
+    SQLQuery.SQL.Add('UPDATE USUARIOS SET SENHA_TEMPORARIA = :SENHA_TEMPORARIA, ' +
+    'SENHA = :SENHA WHERE ID = :ID');
+    SQLQuery.ParamByName('SENHA_TEMPORARIA').AsString := 'S';
+    SQLQuery.ParamByName('SENHA').AsString := TBCrypt.GenerateHash(TEMP_PASSWORD);
+    SQLQuery.ParamByName('ID').AsString := IDUsuario;
+    SQLQuery.ExecSQL;
+  finally
+    SQLQuery.Close;
+    SQLQuery.Free;
+  end;
+end;
+
+procedure TDmUsuarios.RedefinirSenha(Usuario: TModelEntidadeUsuario);
+var
+  SQLQuery : TFDQuery;
+begin
+  SQLQuery := TFDQuery.Create(nil);
+  try
+    SQLQuery.Connection := DmConexao.SQLConexao;
+    SQLQuery.SQL.Clear;
+    SQLQuery.SQL.Add('UPDATE USUARIOS SET SENHA_TEMPORARIA = :SENHA_TEMPORARIA, ' +
+      'SENHA = :SENHA WHERE ID = :ID');
+    SQLQuery.ParamByName('SENHA_TEMPORARIA').AsString := 'N';
+    SQLQuery.ParamByName('SENHA').AsString := TBCrypt.GenerateHash(Usuario.Senha);
+    SQLQuery.ParamByName('ID').AsString := Usuario.ID;
+    SQLQuery.ExecSQL;
+  finally
+    SQLQuery.Close;
+    SQLQuery.Free;
+  end;
 end;
 
 function TDmUsuarios.VerificaLoginCadastrado(Login, ID: String): Boolean;

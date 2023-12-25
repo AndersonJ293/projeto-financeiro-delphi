@@ -7,13 +7,15 @@ inherited FormUsuarios: TFormUsuarios
   inherited PnlPrincipal: TCardPanel
     Width = 720
     Height = 542
+    ActiveCard = CardCadastro
     inherited CardCadastro: TCard
-      Alignment = taLeftJustify
+      Width = 718
+      Height = 540
       Padding.Top = 30
       object LblTitulo: TLabel [0]
         Left = 0
         Top = 30
-        Width = 714
+        Width = 718
         Height = 40
         Align = alTop
         Alignment = taCenter
@@ -27,86 +29,26 @@ inherited FormUsuarios: TFormUsuarios
         ExplicitWidth = 246
       end
       inherited Panel1: TPanel
-        Top = 459
-        Width = 714
         inherited ButtonSalvar: TButton
           OnClick = ButtonSalvarClick
         end
       end
-      object Panel4: TPanel
-        Left = 19
-        Top = 197
-        Width = 300
-        Height = 73
-        BevelOuter = bvNone
-        Color = clNone
-        TabOrder = 2
-        object LblSenha: TLabel
-          Left = 0
-          Top = 0
-          Width = 300
-          Height = 28
-          Align = alTop
-          Caption = 'Senha'
-          Color = clBtnFace
-          ParentColor = False
-          Transparent = True
-          Layout = tlCenter
-          ExplicitWidth = 53
-        end
-        object Panel6: TPanel
-          Left = 0
-          Top = 32
-          Width = 300
-          Height = 41
-          Align = alBottom
-          BevelOuter = bvNone
-          Caption = 'Panel3'
-          TabOrder = 0
-          object Shape2: TShape
-            Left = 0
-            Top = 0
-            Width = 300
-            Height = 41
-            Align = alClient
-            Pen.Color = clNone
-            Pen.Style = psClear
-            Pen.Width = 0
-            Shape = stRoundRect
-            ExplicitTop = 2
-          end
-          object EditSenha: TEdit
-            AlignWithMargins = True
-            Left = 3
-            Top = 4
-            Width = 293
-            Height = 34
-            Margins.Top = 4
-            Margins.Right = 4
-            Align = alClient
-            BevelInner = bvNone
-            BevelOuter = bvNone
-            BorderStyle = bsNone
-            TabOrder = 0
-            TextHint = 'Senha'
-          end
-        end
-      end
       object Panel9: TPanel
-        Left = 400
-        Top = 198
+        Left = 209
+        Top = 203
         Width = 300
         Height = 70
         BevelOuter = bvNone
-        TabOrder = 4
+        TabOrder = 3
         object LblStatus: TLabel
           Left = 0
           Top = 0
           Width = 300
           Height = 28
           Align = alTop
+          Alignment = taCenter
           Caption = 'Status'
-          ExplicitWidth = 53
+          ExplicitTop = 4
         end
         object TglStatus: TToggleSwitch
           AlignWithMargins = True
@@ -199,7 +141,7 @@ inherited FormUsuarios: TFormUsuarios
         Height = 73
         BevelOuter = bvNone
         Color = clNone
-        TabOrder = 3
+        TabOrder = 2
         object LblLogin: TLabel
           Left = 0
           Top = 0
@@ -322,6 +264,7 @@ inherited FormUsuarios: TFormUsuarios
         Height = 380
         inherited DBGrid1: TDBGrid
           DataSource = DataSource1
+          PopupMenu = PopupMenu1
           Columns = <
             item
               Expanded = False
@@ -353,5 +296,13 @@ inherited FormUsuarios: TFormUsuarios
     DataSet = DmUsuarios.CdsUsuarios
     Left = 656
     Top = 408
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 624
+    Top = 216
+    object menuLimparSenha: TMenuItem
+      Caption = 'Limpar Senha'
+      OnClick = menuLimparSenhaClick
+    end
   end
 end

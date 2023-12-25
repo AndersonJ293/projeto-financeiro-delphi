@@ -32,7 +32,8 @@
         ParentBiDiMode = False
         Width = 200
       end>
-    ExplicitWidth = 689
+    ExplicitTop = 502
+    ExplicitWidth = 716
   end
   object MainMenu1: TMainMenu
     Left = 344

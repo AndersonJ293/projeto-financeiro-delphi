@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, ProjetoFinanceiro.View.CadastroPadrao,
   Data.DB, System.ImageList, Vcl.ImgList, Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls,
   Vcl.ExtCtrls, Vcl.WinXPanels, ProjetoFinanceiro.Model.Usuarios, Vcl.WinXCtrls,
-  ProjetoFinanceiro.Util.GeradorId;
+  ProjetoFinanceiro.Util.GeradorId, Vcl.Menus;
 
 type
   TFormUsuarios = class(TFormCadastroPadrao)
@@ -20,11 +20,6 @@ type
     EditNome: TEdit;
     LblNome: TLabel;
     Panel3: TPanel;
-    Panel4: TPanel;
-    LblSenha: TLabel;
-    Panel6: TPanel;
-    Shape2: TShape;
-    EditSenha: TEdit;
     Panel7: TPanel;
     LblLogin: TLabel;
     Panel8: TPanel;
@@ -33,6 +28,8 @@ type
     Panel9: TPanel;
     LblStatus: TLabel;
     LblTitulo: TLabel;
+    PopupMenu1: TPopupMenu;
+    menuLimparSenha: TMenuItem;
     procedure ButtonPesquisarClick(Sender: TObject);
     procedure ButtonAlterarClick(Sender: TObject);
     procedure ButtonIncluirClick(Sender: TObject);
@@ -40,6 +37,7 @@ type
     procedure ButtonSalvarClick(Sender: TObject);
     procedure ButtonCancelarClick(Sender: TObject);
     procedure ButtonExcluirClick(Sender: TObject);
+    procedure menuLimparSenhaClick(Sender: TObject);
   private
     { Private declarations }
     procedure LimparCampos;
@@ -63,7 +61,6 @@ begin
   LblTitulo.Caption := 'Editar Usuário';
   EditNome.Text := DmUsuarios.CdsUsuariosNome.AsString;
   EditLogin.Text := DmUsuarios.CdsUsuariosLogin.AsString;
-  EditSenha.Text := DmUsuarios.CdsUsuariosSenha.AsString;
 
   if DmUsuarios.CdsUsuariosStatus.AsString = 'A' then
   TglStatus.State := tssOn
@@ -117,7 +114,6 @@ end;
 procedure TFormUsuarios.ButtonSalvarClick(Sender: TObject);
 var
   LStatus : String;
-  LHash : String;
 begin
   if Trim(EditNome.Text) = '' then
   begin
@@ -135,23 +131,14 @@ begin
     abort;
   end;
 
-  if Trim(EditSenha.Text) = '' then
-  begin
-    EditSenha.SetFocus;
-    Application.MessageBox('O campo senha não pode ser vazio.', 'Atenção',
-                              MB_OK + MB_ICONWARNING);
-    abort;
-  end;
-
   if DmUsuarios.VerificaLoginCadastrado(Trim(EditLogin.Text),
   DmUsuarios.CdsUsuarios.FieldByName('ID').AsString) then
   begin
     EditLogin.SetFocus;
-    Application.MessageBox(PWideChar(Format('O login %s já se encontra cadastrado.', [EditLogin.Text])),
-                                               'Atenção', MB_OK + MB_ICONWARNING);
+    Application.MessageBox(PWideChar(Format('O login %s já se encontra cadastrado.',
+     [EditLogin.Text])), 'Atenção', MB_OK + MB_ICONWARNING);
     abort;
   end;
-
 
   LStatus := 'A';
 
@@ -162,13 +149,13 @@ begin
   begin
     DmUsuarios.CdsUsuariosID.AsString := TUtilitario.GetID;
     DmUsuarios.CdsUsuariosData_Cadastro.AsDateTime := now;
+    DmUsuarios.CdsUsuariosSenha.AsString := TBCrypt.GenerateHash(
+      DmUsuarios.TEMP_PASSWORD);
+    DmUsuarios.CdsUsuariosSenha_Temporaria.AsString := 'S';
   end;
-
-  LHash := TBCrypt.GenerateHash(Trim(EditSenha.Text));
 
   DmUsuarios.CdsUsuariosNome.AsString := Trim(EditNome.Text);
   DmUsuarios.CdsUsuariosLogin.AsString := Trim(EditLogin.Text);
-  DmUsuarios.CdsUsuariosSenha.AsString := LHash;
   DmUsuarios.CdsUsuariosStatus.AsString := LStatus;
 
   DmUsuarios.CdsUsuarios.Post;
@@ -198,4 +185,17 @@ begin
     end;
 
 end;
+procedure TFormUsuarios.menuLimparSenhaClick(Sender: TObject);
+begin
+  inherited;
+  if not DataSource1.DataSet.IsEmpty then
+  begin
+    DmUsuarios.LimparSenha(DataSource1.DataSet.FieldByName('ID').AsString);
+    Application.MessageBox(PWideChar(Format('Foi definida a senha padrão "123456" ' +
+      'para o usuário "%s".', [DataSource1.DataSet.FieldByName('NOME').AsString])),
+        'Atenção', MB_OK + MB_ICONINFORMATION);
+  end;
+
+end;
+
 end.

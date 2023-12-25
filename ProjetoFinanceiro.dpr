@@ -11,7 +11,8 @@ uses
   ProjetoFinanceiro.Util.GeradorId in 'src\Util\ProjetoFinanceiro.Util.GeradorId.pas',
   ProjetoFinanceiro.View.Login in 'src\View\ProjetoFinanceiro.View.Login.pas' {FormLogin},
   ProjetoFinanceiro.Model.Entidades.Usuario in 'src\Model\Entidades\ProjetoFinanceiro.Model.Entidades.Usuario.pas',
-  ProjetoFinanceiro.Model.Sistema in 'src\Model\ProjetoFinanceiro.Model.Sistema.pas' {dmSistema: TDataModule};
+  ProjetoFinanceiro.Model.Sistema in 'src\Model\ProjetoFinanceiro.Model.Sistema.pas' {dmSistema: TDataModule},
+  ProjetoFinanceiro.View.RedefinirSenha in 'src\View\ProjetoFinanceiro.View.RedefinirSenha.pas' {FormRedefinirSenha};
 
 {$R *.res}
 

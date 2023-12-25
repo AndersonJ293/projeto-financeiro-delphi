@@ -32,7 +32,8 @@ implementation
 uses
   ProjetoFinanceiro.View.CadastroPadrao,
   ProjetoFinanceiro.View.Splash, ProjetoFinanceiro.View.Login,
-  ProjetoFinanceiro.Model.Usuarios;
+  ProjetoFinanceiro.Model.Usuarios,
+  ProjetoFinanceiro.View.RedefinirSenha;
 
 {$R *.dfm}
 
@@ -58,6 +59,20 @@ begin
   finally
     FreeAndNil(FormLogin);
   end;
+
+  if DmUsuarios.GetUsuarioLogado.SenhaTemporaria then
+    begin
+      FormRedefinirSenha := TFormRedefinirSenha.Create(nil);
+      try
+        FormRedefinirSenha.Usuario := DmUsuarios.GetUsuarioLogado;
+        FormRedefinirSenha.ShowModal;
+        if FormRedefinirSenha.ModalResult <> mrOk then
+          Application.Terminate;
+      finally
+        FreeAndNil(FormRedefinirSenha);
+      end;
+    end;
+
   StatusBar1.Panels.Items[1].Text := 'Usuario: ' + dmUsuarios.GetUsuarioLogado.Nome;
 end;
 
