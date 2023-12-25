@@ -51,6 +51,8 @@ var
   FormUsuarios: TFormUsuarios;
 
 implementation
+uses
+  BCrypt;
 {$R *.dfm}
 
 procedure TFormUsuarios.ButtonAlterarClick(Sender: TObject);
@@ -113,8 +115,9 @@ begin
 end;
 
 procedure TFormUsuarios.ButtonSalvarClick(Sender: TObject);
-var LStatus : String;
-
+var
+  LStatus : String;
+  LHash : String;
 begin
   if Trim(EditNome.Text) = '' then
   begin
@@ -161,10 +164,11 @@ begin
     DmUsuarios.CdsUsuariosData_Cadastro.AsDateTime := now;
   end;
 
+  LHash := TBCrypt.GenerateHash(Trim(EditSenha.Text));
 
   DmUsuarios.CdsUsuariosNome.AsString := Trim(EditNome.Text);
   DmUsuarios.CdsUsuariosLogin.AsString := Trim(EditLogin.Text);
-  DmUsuarios.CdsUsuariosSenha.AsString := Trim(EditSenha.Text);
+  DmUsuarios.CdsUsuariosSenha.AsString := LHash;
   DmUsuarios.CdsUsuariosStatus.AsString := LStatus;
 
   DmUsuarios.CdsUsuarios.Post;

@@ -27,6 +27,7 @@ object DmUsuarios: TDmUsuarios
     end
     object CdsUsuariosSenha: TStringField
       FieldName = 'Senha'
+      Size = 60
     end
     object CdsUsuariosStatus: TStringField
       FieldName = 'Status'

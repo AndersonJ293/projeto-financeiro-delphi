@@ -36,7 +36,8 @@ var
   DmUsuarios: TDmUsuarios;
 
 implementation
-
+  uses
+    BCrypt;
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}
@@ -62,14 +63,16 @@ begin
    try
        SQLConsulta.Connection := DmConexao.SQLConexao;
        SQLConsulta.SQL.Clear;
-       SQLConsulta.SQL.Add('SELECT * FROM USUARIOS WHERE LOGIN = ' +
-                                    ':LOGIN and SENHA = :SENHA');
+       SQLConsulta.SQL.Add('SELECT * FROM USUARIOS WHERE LOGIN = :LOGIN');
        SQLConsulta.ParamByName('LOGIN').AsString := Login;
-       SQLConsulta.ParamByName('SENHA').AsString := Senha;
        SQLConsulta.Open;
 
        if SQLConsulta.IsEmpty then
          raise Exception.Create('Usuário e/ou senha inválidos.');
+
+       if not TBCrypt.CompareHash(Senha, SQLConsulta.FieldByName('SENHA').AsString) then
+         raise Exception.Create('Usuário e/ou senha inválidos.');
+
        if SQLConsulta.FieldByName('STATUS').AsString <> 'A' then
          raise Exception.Create('Usuário inativo.');
 

@@ -7,15 +7,13 @@ inherited FormUsuarios: TFormUsuarios
   inherited PnlPrincipal: TCardPanel
     Width = 720
     Height = 542
-    ExplicitWidth = 716
-    ExplicitHeight = 541
     inherited CardCadastro: TCard
       Alignment = taLeftJustify
       Padding.Top = 30
       object LblTitulo: TLabel [0]
         Left = 0
         Top = 30
-        Width = 718
+        Width = 714
         Height = 40
         Align = alTop
         Alignment = taCenter
@@ -29,6 +27,8 @@ inherited FormUsuarios: TFormUsuarios
         ExplicitWidth = 246
       end
       inherited Panel1: TPanel
+        Top = 459
+        Width = 714
         inherited ButtonSalvar: TButton
           OnClick = ButtonSalvarClick
         end
@@ -252,9 +252,10 @@ inherited FormUsuarios: TFormUsuarios
       end
     end
     inherited CardPesquisa: TCard
-      ExplicitWidth = 714
-      ExplicitHeight = 539
+      Width = 718
+      Height = 540
       inherited PnlPesquisa: TPanel
+        Width = 718
         inherited ButtonPesquisar: TButton [1]
           TabOrder = 0
           OnClick = ButtonPesquisarClick
@@ -304,8 +305,8 @@ inherited FormUsuarios: TFormUsuarios
         end
       end
       inherited PnlPesquisaBotoes: TPanel
-        ExplicitTop = 459
-        ExplicitWidth = 714
+        Top = 460
+        Width = 718
         inherited ButtonAlterar: TButton
           Left = 151
           ExplicitLeft = 151
@@ -317,6 +318,8 @@ inherited FormUsuarios: TFormUsuarios
         end
       end
       inherited PnlGrid: TPanel
+        Width = 718
+        Height = 380
         inherited DBGrid1: TDBGrid
           DataSource = DataSource1
           Columns = <

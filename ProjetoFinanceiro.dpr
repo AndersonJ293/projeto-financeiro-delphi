@@ -10,7 +10,8 @@ uses
   ProjetoFinanceiro.Model.Usuarios in 'src\Model\ProjetoFinanceiro.Model.Usuarios.pas' {DmUsuarios: TDataModule},
   ProjetoFinanceiro.Util.GeradorId in 'src\Util\ProjetoFinanceiro.Util.GeradorId.pas',
   ProjetoFinanceiro.View.Login in 'src\View\ProjetoFinanceiro.View.Login.pas' {FormLogin},
-  ProjetoFinanceiro.Model.Entidades.Usuario in 'src\Model\Entidades\ProjetoFinanceiro.Model.Entidades.Usuario.pas';
+  ProjetoFinanceiro.Model.Entidades.Usuario in 'src\Model\Entidades\ProjetoFinanceiro.Model.Entidades.Usuario.pas',
+  ProjetoFinanceiro.Model.Sistema in 'src\Model\ProjetoFinanceiro.Model.Sistema.pas' {dmSistema: TDataModule};
 
 {$R *.res}
 
@@ -22,5 +23,6 @@ begin
   Application.CreateForm(TFormPrincipal, FormPrincipal);
   Application.CreateForm(TFormCadastroPadrao, FormCadastroPadrao);
   Application.CreateForm(TFormUsuarios, FormUsuarios);
+  Application.CreateForm(TdmSistema, dmSistema);
   Application.Run;
 end.
