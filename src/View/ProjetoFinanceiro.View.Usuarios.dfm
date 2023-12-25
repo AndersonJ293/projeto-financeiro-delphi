@@ -1,17 +1,11 @@
 inherited FormUsuarios: TFormUsuarios
   Caption = 'Cadastro de Usu'#225'rios'
-  ClientHeight = 542
-  ClientWidth = 720
-  OnShow = FormShow
   TextHeight = 28
   inherited PnlPrincipal: TCardPanel
-    Width = 720
-    Height = 542
-    ActiveCard = CardCadastro
     inherited CardCadastro: TCard
-      Width = 718
-      Height = 540
       Padding.Top = 30
+      ExplicitWidth = 714
+      ExplicitHeight = 539
       object LblTitulo: TLabel [0]
         Left = 0
         Top = 30
@@ -29,9 +23,8 @@ inherited FormUsuarios: TFormUsuarios
         ExplicitWidth = 246
       end
       inherited Panel1: TPanel
-        inherited ButtonSalvar: TButton
-          OnClick = ButtonSalvarClick
-        end
+        ExplicitTop = 459
+        ExplicitWidth = 714
       end
       object Panel9: TPanel
         Left = 209
@@ -48,7 +41,7 @@ inherited FormUsuarios: TFormUsuarios
           Align = alTop
           Alignment = taCenter
           Caption = 'Status'
-          ExplicitTop = 4
+          ExplicitWidth = 53
         end
         object TglStatus: TToggleSwitch
           AlignWithMargins = True
@@ -194,13 +187,12 @@ inherited FormUsuarios: TFormUsuarios
       end
     end
     inherited CardPesquisa: TCard
-      Width = 718
-      Height = 540
+      ExplicitWidth = 718
+      ExplicitHeight = 540
       inherited PnlPesquisa: TPanel
-        Width = 718
+        ExplicitWidth = 718
         inherited ButtonPesquisar: TButton [1]
           TabOrder = 0
-          OnClick = ButtonPesquisarClick
         end
         object Panel2: TPanel [2]
           Left = 10
@@ -247,23 +239,24 @@ inherited FormUsuarios: TFormUsuarios
         end
       end
       inherited PnlPesquisaBotoes: TPanel
-        Top = 460
-        Width = 718
+        ExplicitTop = 460
+        ExplicitWidth = 718
         inherited ButtonAlterar: TButton
           Left = 151
           ExplicitLeft = 151
         end
+        inherited ButtonIncluir: TButton
+          ExplicitWidth = 130
+        end
         inherited ButtonExcluir: TButton
           Left = 293
-          OnClick = ButtonExcluirClick
           ExplicitLeft = 293
         end
       end
       inherited PnlGrid: TPanel
-        Width = 718
-        Height = 380
+        ExplicitWidth = 718
+        ExplicitHeight = 380
         inherited DBGrid1: TDBGrid
-          DataSource = DataSource1
           PopupMenu = PopupMenu1
           Columns = <
             item
@@ -292,12 +285,7 @@ inherited FormUsuarios: TFormUsuarios
     Left = 354
     Top = 393
   end
-  object DataSource1: TDataSource
-    DataSet = DmUsuarios.CdsUsuarios
-    Left = 656
-    Top = 408
-  end
-  object PopupMenu1: TPopupMenu
+  object PopupMenu1: TPopupMenu [2]
     Left = 624
     Top = 216
     object menuLimparSenha: TMenuItem

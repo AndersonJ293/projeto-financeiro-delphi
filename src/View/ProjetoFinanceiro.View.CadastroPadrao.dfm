@@ -13,6 +13,7 @@ object FormCadastroPadrao: TFormCadastroPadrao
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnShow = FormShow
   TextHeight = 28
   object PnlPrincipal: TCardPanel
     Left = 0
@@ -67,6 +68,7 @@ object FormCadastroPadrao: TFormCadastroPadrao
           ImageMargins.Right = 5
           Images = ImageList1
           TabOrder = 1
+          OnClick = ButtonSalvarClick
         end
       end
     end
@@ -115,6 +117,7 @@ object FormCadastroPadrao: TFormCadastroPadrao
           ImageMargins.Right = 5
           Images = ImageList1
           TabOrder = 1
+          OnClick = ButtonPesquisarClick
         end
       end
       object PnlPesquisaBotoes: TPanel
@@ -185,6 +188,7 @@ object FormCadastroPadrao: TFormCadastroPadrao
           ImageMargins.Right = 5
           Images = ImageList1
           TabOrder = 3
+          OnClick = ButtonExcluirClick
         end
         object ButtonImprimir: TButton
           Left = 435
@@ -215,6 +219,7 @@ object FormCadastroPadrao: TFormCadastroPadrao
           Width = 716
           Height = 378
           Align = alClient
+          DataSource = DataSource1
           TabOrder = 0
           TitleFont.Charset = DEFAULT_CHARSET
           TitleFont.Color = clWindowText
@@ -1295,5 +1300,10 @@ object FormCadastroPadrao: TFormCadastroPadrao
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000}
+  end
+  object DataSource1: TDataSource
+    DataSet = DmUsuarios.CdsUsuarios
+    Left = 656
+    Top = 408
   end
 end
