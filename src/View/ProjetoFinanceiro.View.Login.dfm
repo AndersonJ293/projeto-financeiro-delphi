@@ -13,6 +13,7 @@ object FormLogin: TFormLogin
   Font.Name = 'Segoe UI'
   Font.Style = []
   Position = poScreenCenter
+  OnShow = FormShow
   TextHeight = 15
   object PnlEsquerda: TPanel
     Left = 0
@@ -25,6 +26,7 @@ object FormLogin: TFormLogin
     ParentBackground = False
     TabOrder = 0
     StyleName = 'Windows'
+    ExplicitHeight = 441
     object ImgLogin: TImage
       Left = 9
       Top = 93
@@ -361,9 +363,8 @@ object FormLogin: TFormLogin
     Height = 442
     Align = alClient
     TabOrder = 1
-    ExplicitLeft = 272
-    ExplicitWidth = 361
-    ExplicitHeight = 97
+    ExplicitWidth = 351
+    ExplicitHeight = 441
     object PnlTitulo: TPanel
       Left = 1
       Top = 1
@@ -376,11 +377,12 @@ object FormLogin: TFormLogin
       Padding.Top = 10
       Padding.Bottom = 10
       TabOrder = 0
+      ExplicitWidth = 349
       object LblTitulo: TLabel
         Left = 0
         Top = 10
         Width = 353
-        Height = 63
+        Height = 40
         Align = alTop
         Alignment = taCenter
         Caption = 'Sistema Financeiro'
@@ -390,15 +392,13 @@ object FormLogin: TFormLogin
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitLeft = 1
-        ExplicitTop = 32
-        ExplicitWidth = 351
+        ExplicitWidth = 258
       end
       object Label1: TLabel
         Left = 0
-        Top = 55
+        Top = 60
         Width = 353
-        Height = 37
+        Height = 32
         Align = alBottom
         Alignment = taCenter
         Caption = 'Login'
@@ -408,9 +408,7 @@ object FormLogin: TFormLogin
         Font.Name = 'Segoe UI'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitLeft = 1
-        ExplicitTop = 56
-        ExplicitWidth = 351
+        ExplicitWidth = 64
       end
     end
     object PnlForm: TPanel
@@ -421,8 +419,8 @@ object FormLogin: TFormLogin
       Align = alClient
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitLeft = 65
-      ExplicitTop = 53
+      ExplicitWidth = 349
+      ExplicitHeight = 335
       object Panel5: TPanel
         Left = 25
         Top = 24
@@ -495,8 +493,6 @@ object FormLogin: TFormLogin
             ParentFont = False
             TabOrder = 0
             TextHint = 'Usu'#225'rio'
-            ExplicitLeft = 0
-            ExplicitTop = 3
           end
         end
       end
@@ -621,8 +617,6 @@ object FormLogin: TFormLogin
           OnClick = LblButtonClick
           OnMouseEnter = LblButtonMouseEnter
           OnMouseLeave = LblButtonMouseLeave
-          ExplicitLeft = 63
-          ExplicitTop = 2
           ExplicitWidth = 59
           ExplicitHeight = 30
         end

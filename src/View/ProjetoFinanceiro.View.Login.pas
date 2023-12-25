@@ -1,11 +1,12 @@
-unit ProjetoFinanceiro.View.Login;
+﻿unit ProjetoFinanceiro.View.Login;
 
 interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Imaging.pngimage,
-  Vcl.StdCtrls, Vcl.Buttons, ProjetoFinanceiro.Model.Usuarios;
+  Vcl.StdCtrls, Vcl.Buttons, ProjetoFinanceiro.Model.Usuarios,
+  ProjetoFinanceiro.Model.Sistema;
 
 type
   TFormLogin = class(TForm)
@@ -34,6 +35,7 @@ type
     procedure LblButtonClick(Sender: TObject);
     procedure EditSenhaKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
+    procedure FormShow(Sender: TObject);
 
     
   private
@@ -46,15 +48,18 @@ var
   FormLogin: TFormLogin;
 
 implementation
-
 {$R *.dfm}
-
 
 procedure TFormLogin.EditSenhaKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
    if Key = 13 then
      LblButtonClick(Sender);
+end;
+
+procedure TFormLogin.FormShow(Sender: TObject);
+begin
+  EditUsuario.Text := dmSistema.UsuarioUltimoAcesso;
 end;
 
 procedure TFormLogin.LblButtonClick(Sender: TObject);
@@ -77,6 +82,8 @@ begin
   try
      DmUsuarios.EfetuarLogin(Trim(EditUsuario.Text),
                              Trim(EditSenha.Text));
+     dmSistema.GravaDataUltimoAcesso(now);
+     dmSistema.GravaUsuarioUltimoAcesso(DmUsuarios.GetUsuarioLogado.Login);
      ModalResult := mrok;
   except
     on Erro: Exception do

@@ -1,4 +1,4 @@
-unit ProjetoFinanceiro.Model.Usuarios;
+﻿unit ProjetoFinanceiro.Model.Usuarios;
 
 interface
 

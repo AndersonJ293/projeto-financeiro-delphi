@@ -1,17 +1,17 @@
 inherited FormUsuarios: TFormUsuarios
   Caption = 'Cadastro de Usu'#225'rios'
+  ClientHeight = 542
   ClientWidth = 720
   OnShow = FormShow
-  ExplicitHeight = 579
   TextHeight = 28
   inherited PnlPrincipal: TCardPanel
     Width = 720
-    ExplicitHeight = 540
+    Height = 542
+    ExplicitWidth = 716
+    ExplicitHeight = 541
     inherited CardCadastro: TCard
-      Width = 718
       Alignment = taLeftJustify
       Padding.Top = 30
-      ExplicitHeight = 539
       object LblTitulo: TLabel [0]
         Left = 0
         Top = 30
@@ -29,8 +29,6 @@ inherited FormUsuarios: TFormUsuarios
         ExplicitWidth = 246
       end
       inherited Panel1: TPanel
-        Top = 459
-        ExplicitTop = 459
         inherited ButtonSalvar: TButton
           OnClick = ButtonSalvarClick
         end
@@ -254,10 +252,9 @@ inherited FormUsuarios: TFormUsuarios
       end
     end
     inherited CardPesquisa: TCard
-      Width = 718
-      ExplicitHeight = 538
+      ExplicitWidth = 714
+      ExplicitHeight = 539
       inherited PnlPesquisa: TPanel
-        Width = 718
         inherited ButtonPesquisar: TButton [1]
           TabOrder = 0
           OnClick = ButtonPesquisarClick
@@ -307,14 +304,11 @@ inherited FormUsuarios: TFormUsuarios
         end
       end
       inherited PnlPesquisaBotoes: TPanel
-        Width = 718
-        ExplicitTop = 458
+        ExplicitTop = 459
+        ExplicitWidth = 714
         inherited ButtonAlterar: TButton
           Left = 151
           ExplicitLeft = 151
-        end
-        inherited ButtonIncluir: TButton
-          ExplicitWidth = 122
         end
         inherited ButtonExcluir: TButton
           Left = 293
@@ -323,10 +317,7 @@ inherited FormUsuarios: TFormUsuarios
         end
       end
       inherited PnlGrid: TPanel
-        Width = 718
-        ExplicitHeight = 378
         inherited DBGrid1: TDBGrid
-          Height = 377
           DataSource = DataSource1
           Columns = <
             item
@@ -338,13 +329,13 @@ inherited FormUsuarios: TFormUsuarios
             item
               Expanded = False
               FieldName = 'Login'
-              Width = 239
+              Width = 231
               Visible = True
             end
             item
               Expanded = False
               FieldName = 'Status'
-              Width = 60
+              Width = 59
               Visible = True
             end>
         end
