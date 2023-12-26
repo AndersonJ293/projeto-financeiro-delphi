@@ -4,8 +4,8 @@ object FormCadastroPadrao: TFormCadastroPadrao
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Cadastro Padr'#227'o'
-  ClientHeight = 542
-  ClientWidth = 720
+  ClientHeight = 533
+  ClientWidth = 714
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,14 +18,14 @@ object FormCadastroPadrao: TFormCadastroPadrao
   object PnlPrincipal: TCardPanel
     Left = 0
     Top = 0
-    Width = 720
-    Height = 542
+    Width = 714
+    Height = 533
     Align = alClient
     ActiveCard = CardPesquisa
     Caption = 'PnlPrincipal'
     TabOrder = 0
-    ExplicitWidth = 716
-    ExplicitHeight = 541
+    ExplicitWidth = 720
+    ExplicitHeight = 542
     object CardCadastro: TCard
       Left = 1
       Top = 1
@@ -80,8 +80,6 @@ object FormCadastroPadrao: TFormCadastroPadrao
       Caption = 'CardPesquisa'
       CardIndex = 1
       TabOrder = 1
-      ExplicitWidth = 714
-      ExplicitHeight = 539
       object PnlPesquisa: TPanel
         Left = 0
         Top = 0
@@ -89,7 +87,7 @@ object FormCadastroPadrao: TFormCadastroPadrao
         Height = 80
         Align = alTop
         TabOrder = 0
-        ExplicitWidth = 714
+        ExplicitWidth = 712
         object Label1: TLabel
           Left = 10
           Top = 3
@@ -127,10 +125,8 @@ object FormCadastroPadrao: TFormCadastroPadrao
         Height = 80
         Align = alBottom
         TabOrder = 1
-        ExplicitTop = 459
-        ExplicitWidth = 714
         DesignSize = (
-          718
+          712
           80)
         object ButtonFechar: TButton
           Left = 577
@@ -163,7 +159,7 @@ object FormCadastroPadrao: TFormCadastroPadrao
         object ButtonIncluir: TButton
           Left = 10
           Top = 20
-          Width = 130
+          Width = 124
           Height = 40
           Cursor = crHandPoint
           Anchors = [akLeft, akTop, akRight]
@@ -174,7 +170,6 @@ object FormCadastroPadrao: TFormCadastroPadrao
           Images = ImageList1
           TabOrder = 2
           OnClick = ButtonIncluirClick
-          ExplicitWidth = 126
         end
         object ButtonExcluir: TButton
           Left = 292
@@ -207,12 +202,10 @@ object FormCadastroPadrao: TFormCadastroPadrao
       object PnlGrid: TPanel
         Left = 0
         Top = 80
-        Width = 718
-        Height = 380
+        Width = 712
+        Height = 371
         Align = alClient
         TabOrder = 2
-        ExplicitWidth = 714
-        ExplicitHeight = 379
         object DBGrid1: TDBGrid
           Left = 1
           Top = 1
@@ -1302,7 +1295,6 @@ object FormCadastroPadrao: TFormCadastroPadrao
       000000000000}
   end
   object DataSource1: TDataSource
-    DataSet = DmUsuarios.CdsUsuarios
     Left = 656
     Top = 408
   end

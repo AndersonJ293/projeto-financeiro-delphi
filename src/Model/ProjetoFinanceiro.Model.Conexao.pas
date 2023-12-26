@@ -47,7 +47,7 @@ begin
   SQLConexao.Params.Clear;
   
   if not FileExists(ARQUIVOCONFIGURACAO) then
-    raise Exception.Create('Arquivo de confiração não encontrado...');
+    raise Exception.Create('Arquivo de configuração não encontrado...');
 
   ListaParametros := TStringList.Create;
   try

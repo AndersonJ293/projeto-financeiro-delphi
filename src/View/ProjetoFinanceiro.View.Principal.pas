@@ -15,9 +15,12 @@ type
     CadastroUsuario: TMenuItem;
     StatusBar1: TStatusBar;
     Timer1: TTimer;
+    Financeiro: TMenuItem;
+    MenuCaixa: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure CadastroUsuarioClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
+    procedure MenuCaixaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,7 +36,7 @@ uses
   ProjetoFinanceiro.View.CadastroPadrao,
   ProjetoFinanceiro.View.Splash, ProjetoFinanceiro.View.Login,
   ProjetoFinanceiro.Model.Usuarios,
-  ProjetoFinanceiro.View.RedefinirSenha;
+  ProjetoFinanceiro.View.RedefinirSenha, ProjetoFinanceiro.View.Caixa;
 
 {$R *.dfm}
 
@@ -74,6 +77,11 @@ begin
     end;
 
   StatusBar1.Panels.Items[1].Text := 'Usuario: ' + dmUsuarios.GetUsuarioLogado.Nome;
+end;
+
+procedure TFormPrincipal.MenuCaixaClick(Sender: TObject);
+begin
+  FormCaixa.Show;
 end;
 
 procedure TFormPrincipal.Timer1Timer(Sender: TObject);

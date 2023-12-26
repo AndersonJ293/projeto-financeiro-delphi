@@ -144,6 +144,16 @@
             <Form>FormRedefinirSenha</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="src\Util\ProjetoFinanceiro.Util.Pesquisa.pas"/>
+        <DCCReference Include="src\Model\ProjetoFinanceiro.Model.Caixa.pas">
+            <Form>DmCaixa</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="src\View\ProjetoFinanceiro.View.Caixa.pas">
+            <Form>FormCaixa</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

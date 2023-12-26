@@ -2,8 +2,8 @@
   Left = 0
   Top = 0
   Caption = 'Projeto Financeiro'
-  ClientHeight = 522
-  ClientWidth = 720
+  ClientHeight = 513
+  ClientWidth = 714
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,8 +17,8 @@
   TextHeight = 15
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 503
-    Width = 720
+    Top = 494
+    Width = 714
     Height = 19
     Panels = <
       item
@@ -32,8 +32,8 @@
         ParentBiDiMode = False
         Width = 200
       end>
-    ExplicitTop = 502
-    ExplicitWidth = 716
+    ExplicitTop = 485
+    ExplicitWidth = 708
   end
   object MainMenu1: TMainMenu
     Left = 344
@@ -43,6 +43,13 @@
       object CadastroUsuario: TMenuItem
         Caption = 'Usu'#225'rios'
         OnClick = CadastroUsuarioClick
+      end
+    end
+    object Financeiro: TMenuItem
+      Caption = 'Financeiro'
+      object MenuCaixa: TMenuItem
+        Caption = 'Caixa'
+        OnClick = MenuCaixaClick
       end
     end
     object Relatórios: TMenuItem

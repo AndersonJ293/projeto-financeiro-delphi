@@ -2,10 +2,11 @@ inherited FormUsuarios: TFormUsuarios
   Caption = 'Cadastro de Usu'#225'rios'
   TextHeight = 28
   inherited PnlPrincipal: TCardPanel
+    ActiveCard = CardCadastro
     inherited CardCadastro: TCard
       Padding.Top = 30
-      ExplicitWidth = 714
-      ExplicitHeight = 539
+      ExplicitWidth = 712
+      ExplicitHeight = 531
       object LblTitulo: TLabel [0]
         Left = 0
         Top = 30
@@ -23,8 +24,8 @@ inherited FormUsuarios: TFormUsuarios
         ExplicitWidth = 246
       end
       inherited Panel1: TPanel
-        ExplicitTop = 459
-        ExplicitWidth = 714
+        ExplicitTop = 451
+        ExplicitWidth = 712
       end
       object Panel9: TPanel
         Left = 209
@@ -231,7 +232,7 @@ inherited FormUsuarios: TFormUsuarios
           BorderStyle = bsNone
           ParentBiDiMode = False
           TabOrder = 2
-          TextHint = 'Nome'
+          TextHint = 'Nome, ID, Status'
           ExplicitLeft = 20
           ExplicitTop = 37
           ExplicitWidth = 380
@@ -292,5 +293,8 @@ inherited FormUsuarios: TFormUsuarios
       Caption = 'Limpar Senha'
       OnClick = menuLimparSenhaClick
     end
+  end
+  inherited DataSource1: TDataSource
+    DataSet = DmUsuarios.CdsUsuarios
   end
 end
