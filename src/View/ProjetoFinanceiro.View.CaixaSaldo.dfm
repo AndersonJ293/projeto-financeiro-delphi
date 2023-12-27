@@ -1,9 +1,9 @@
-object FormCadastroPadrao: TFormCadastroPadrao
+object FormCaixaSaldo: TFormCaixaSaldo
   Left = 0
   Top = 0
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
-  Caption = 'Cadastro Padr'#227'o'
+  Caption = 'Saldo do Caixa'
   ClientHeight = 533
   ClientWidth = 714
   Color = clBtnFace
@@ -15,218 +15,446 @@ object FormCadastroPadrao: TFormCadastroPadrao
   Position = poScreenCenter
   OnShow = FormShow
   TextHeight = 28
-  object PnlPrincipal: TCardPanel
+  object PnlPrincipal: TPanel
     Left = 0
     Top = 0
     Width = 714
     Height = 533
     Align = alClient
-    ActiveCard = CardPesquisa
-    Caption = 'PnlPrincipal'
+    BevelOuter = bvNone
     TabOrder = 0
-    ExplicitWidth = 708
-    ExplicitHeight = 524
-    object CardCadastro: TCard
-      Left = 1
-      Top = 1
-      Width = 712
-      Height = 531
-      Caption = 'CardCadastro'
-      CardIndex = 0
+    ExplicitLeft = 272
+    ExplicitTop = 264
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object PnlPesquisar: TPanel
+      Left = 0
+      Top = 0
+      Width = 714
+      Height = 80
+      Align = alTop
+      BevelOuter = bvNone
       TabOrder = 0
-      object Panel1: TPanel
-        Left = 0
-        Top = 451
-        Width = 712
-        Height = 80
-        Align = alBottom
-        BorderWidth = 10
+      ExplicitLeft = -1
+      object Label1: TLabel
+        Left = 12
+        Top = 26
+        Width = 50
+        Height = 28
+        Caption = 'Inicial'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+      end
+      object Label2: TLabel
+        Left = 280
+        Top = 25
+        Width = 41
+        Height = 28
+        Caption = 'Final'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+      end
+      object ButtonPesquisar: TButton
+        Left = 576
+        Top = 20
+        Width = 130
+        Height = 40
+        Cursor = crHandPoint
+        Caption = 'Pesquisar'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ImageAlignment = iaRight
+        ImageIndex = 5
+        ImageMargins.Right = 5
+        Images = ImageList1
+        ParentFont = False
         TabOrder = 0
-        object ButtonCancelar: TButton
-          Left = 577
-          Top = 20
-          Width = 130
-          Height = 40
-          Cursor = crHandPoint
-          Caption = 'Cancelar'
-          ImageAlignment = iaRight
-          ImageIndex = 0
-          ImageMargins.Right = 5
-          Images = ImageList1
-          TabOrder = 0
-          OnClick = ButtonCancelarClick
-        end
-        object ButtonSalvar: TButton
-          Left = 435
-          Top = 20
-          Width = 130
-          Height = 40
-          Cursor = crHandPoint
-          Caption = 'Salvar'
-          ImageAlignment = iaRight
-          ImageIndex = 1
-          ImageMargins.Right = 5
-          Images = ImageList1
-          TabOrder = 1
-          OnClick = ButtonSalvarClick
-        end
+        OnClick = ButtonPesquisarClick
+      end
+      object DateInicial: TDateTimePicker
+        Left = 78
+        Top = 22
+        Width = 186
+        Height = 36
+        Date = 45287.000000000000000000
+        Time = 0.383609120370238100
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 1
+        StyleName = 'Windows'
+      end
+      object DateFinal: TDateTimePicker
+        Left = 337
+        Top = 22
+        Width = 186
+        Height = 36
+        Date = 45287.000000000000000000
+        Time = 0.383609120370238100
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 2
+        StyleName = 'Windows'
       end
     end
-    object CardPesquisa: TCard
-      Left = 1
-      Top = 1
-      Width = 712
-      Height = 531
-      Caption = 'CardPesquisa'
-      CardIndex = 1
+    object PnlContent: TPanel
+      Left = 0
+      Top = 80
+      Width = 714
+      Height = 453
+      Align = alClient
+      BevelOuter = bvNone
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -23
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      Padding.Left = 5
+      Padding.Top = 5
+      Padding.Right = 5
+      Padding.Bottom = 5
+      ParentFont = False
       TabOrder = 1
-      ExplicitWidth = 706
-      ExplicitHeight = 522
-      object PnlPesquisa: TPanel
-        Left = 0
-        Top = 0
-        Width = 712
-        Height = 80
-        Align = alTop
-        TabOrder = 0
-        ExplicitWidth = 706
-        object Label1: TLabel
-          Left = 10
-          Top = 3
-          Width = 81
-          Height = 28
-          Caption = 'Pesquisar'
-        end
-        object EditPesquisar: TEdit
-          Left = 10
-          Top = 30
-          Width = 350
-          Height = 36
-          TabOrder = 0
-          TextHint = 'Nome, Id'
-        end
-        object ButtonPesquisar: TButton
-          Left = 577
-          Top = 21
-          Width = 130
-          Height = 40
-          Cursor = crHandPoint
-          Caption = 'Pesquisar'
-          ImageAlignment = iaRight
-          ImageIndex = 5
-          ImageMargins.Right = 5
-          Images = ImageList1
-          TabOrder = 1
-          OnClick = ButtonPesquisarClick
-        end
-      end
-      object PnlPesquisaBotoes: TPanel
-        Left = 0
-        Top = 451
-        Width = 712
-        Height = 80
-        Align = alBottom
-        TabOrder = 1
-        ExplicitTop = 442
-        ExplicitWidth = 706
-        DesignSize = (
-          712
-          80)
-        object ButtonFechar: TButton
-          Left = 577
-          Top = 20
-          Width = 130
-          Height = 40
-          Cursor = crHandPoint
-          Caption = 'Fechar'
-          ImageAlignment = iaRight
-          ImageIndex = 0
-          ImageMargins.Right = 5
-          Images = ImageList1
-          TabOrder = 0
-          OnClick = ButtonFecharClick
-        end
-        object ButtonAlterar: TButton
-          Left = 150
-          Top = 20
-          Width = 130
-          Height = 40
-          Cursor = crHandPoint
-          Caption = 'Alterar'
-          ImageAlignment = iaRight
-          ImageIndex = 3
-          ImageMargins.Right = 5
-          Images = ImageList1
-          TabOrder = 1
-          OnClick = ButtonAlterarClick
-        end
-        object ButtonIncluir: TButton
-          Left = 10
-          Top = 20
-          Width = 118
-          Height = 40
-          Cursor = crHandPoint
-          Anchors = [akLeft, akTop, akRight]
-          Caption = 'Incluir'
-          ImageAlignment = iaRight
-          ImageIndex = 1
-          ImageMargins.Right = 5
-          Images = ImageList1
-          TabOrder = 2
-          OnClick = ButtonIncluirClick
-          ExplicitWidth = 112
-        end
-        object ButtonExcluir: TButton
-          Left = 292
-          Top = 20
-          Width = 130
-          Height = 40
-          Cursor = crHandPoint
-          Caption = 'Excluir'
-          ImageAlignment = iaRight
-          ImageIndex = 2
-          ImageMargins.Right = 5
-          Images = ImageList1
-          TabOrder = 3
-          OnClick = ButtonExcluirClick
-        end
-        object ButtonImprimir: TButton
-          Left = 435
-          Top = 20
-          Width = 130
-          Height = 40
-          Cursor = crHandPoint
-          Caption = 'Imprimir'
-          ImageAlignment = iaRight
-          ImageIndex = 4
-          ImageMargins.Right = 5
-          Images = ImageList1
-          TabOrder = 4
-        end
-      end
-      object PnlGrid: TPanel
-        Left = 0
-        Top = 80
-        Width = 712
-        Height = 371
+      ExplicitLeft = 160
+      ExplicitTop = 66
+      object StackPanel1: TStackPanel
+        Left = 5
+        Top = 5
+        Width = 704
+        Height = 443
         Align = alClient
-        TabOrder = 2
-        ExplicitWidth = 706
-        ExplicitHeight = 362
-        object DBGrid1: TDBGrid
-          Left = 1
-          Top = 1
-          Width = 710
-          Height = 369
+        Color = clWhite
+        ControlCollection = <
+          item
+            Control = Panel5
+            HorizontalPositioning = sphpFill
+            VerticalPositioning = spvpFill
+          end
+          item
+            Control = PnlLinha2
+            HorizontalPositioning = sphpFill
+            VerticalPositioning = spvpFill
+          end
+          item
+            Control = Panel4
+            HorizontalPositioning = sphpFill
+            VerticalPositioning = spvpFill
+          end
+          item
+            Control = Panel3
+            HorizontalPositioning = sphpFill
+            VerticalPositioning = spvpFill
+          end
+          item
+            Control = Panel2
+            HorizontalPositioning = sphpFill
+            VerticalPositioning = spvpFill
+          end
+          item
+            Control = PnlLinha
+            HorizontalPositioning = sphpFill
+            VerticalPositioning = spvpFill
+          end
+          item
+            Control = Panel1
+            HorizontalPositioning = sphpFill
+            VerticalPositioning = spvpFill
+          end>
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -23
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        Padding.Left = 5
+        Padding.Top = 10
+        Padding.Right = 5
+        Padding.Bottom = 10
+        ParentBackground = False
+        ParentFont = False
+        Spacing = 30
+        StyleName = 'Windows'
+        TabOrder = 0
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 714
+        ExplicitHeight = 453
+        object Panel5: TPanel
+          Left = 6
+          Top = 11
+          Width = 692
+          Height = 41
           Align = alClient
-          DataSource = DataSource1
-          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+          BevelOuter = bvNone
+          TabOrder = 4
+          object Label11: TLabel
+            Left = 0
+            Top = 0
+            Width = 156
+            Height = 41
+            Align = alLeft
+            Alignment = taCenter
+            Caption = 'Saldo Inicial'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -27
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            Layout = tlCenter
+            ExplicitHeight = 37
+          end
+          object LblSaldoInicial: TLabel
+            Left = 658
+            Top = 0
+            Width = 34
+            Height = 41
+            Align = alRight
+            Alignment = taCenter
+            Caption = 'R$'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -27
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            Layout = tlCenter
+            ExplicitLeft = 674
+            ExplicitHeight = 37
+          end
+        end
+        object PnlLinha2: TPanel
+          Left = 6
+          Top = 82
+          Width = 692
+          Height = 3
+          Align = alClient
+          Color = clGray
+          ParentBackground = False
+          TabOrder = 6
+          StyleName = 'Windows'
+        end
+        object Panel4: TPanel
+          Left = 6
+          Top = 115
+          Width = 692
+          Height = 41
+          Align = alClient
+          BevelOuter = bvNone
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -23
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 3
+          object Label9: TLabel
+            Left = 0
+            Top = 0
+            Width = 176
+            Height = 41
+            Align = alLeft
+            Alignment = taCenter
+            Caption = 'Total de Entradas'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -23
+            Font.Name = 'Segoe UI'
+            Font.Style = []
+            ParentFont = False
+            Layout = tlCenter
+            ExplicitHeight = 31
+          end
+          object LblTotalEntradas: TLabel
+            Left = 666
+            Top = 0
+            Width = 26
+            Height = 41
+            Align = alRight
+            Alignment = taCenter
+            Caption = 'R$'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -23
+            Font.Name = 'Segoe UI'
+            Font.Style = []
+            ParentFont = False
+            Layout = tlCenter
+            ExplicitLeft = 674
+            ExplicitHeight = 31
+          end
+        end
+        object Panel3: TPanel
+          Left = 6
+          Top = 186
+          Width = 692
+          Height = 41
+          Align = alClient
+          BevelOuter = bvNone
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -23
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 2
+          object Label7: TLabel
+            Left = 0
+            Top = 0
+            Width = 153
+            Height = 41
+            Align = alLeft
+            Alignment = taCenter
+            Caption = 'Total de Sa'#237'das'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -23
+            Font.Name = 'Segoe UI'
+            Font.Style = []
+            ParentFont = False
+            Layout = tlCenter
+            ExplicitHeight = 31
+          end
+          object LblTotalSaidas: TLabel
+            Left = 666
+            Top = 0
+            Width = 26
+            Height = 41
+            Align = alRight
+            Alignment = taCenter
+            Caption = 'R$'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -23
+            Font.Name = 'Segoe UI'
+            Font.Style = []
+            ParentFont = False
+            Layout = tlCenter
+            ExplicitLeft = 674
+            ExplicitHeight = 31
+          end
+        end
+        object Panel2: TPanel
+          Left = 6
+          Top = 257
+          Width = 692
+          Height = 41
+          Align = alClient
+          BevelOuter = bvNone
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -23
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 1
+          object Label5: TLabel
+            Left = 0
+            Top = 0
+            Width = 137
+            Height = 41
+            Align = alLeft
+            Alignment = taCenter
+            Caption = 'Saldo Parcial'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -23
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            Layout = tlCenter
+            ExplicitHeight = 31
+          end
+          object LblTotalParcial: TLabel
+            Left = 664
+            Top = 0
+            Width = 28
+            Height = 41
+            Align = alRight
+            Alignment = taCenter
+            Caption = 'R$'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -23
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            Layout = tlCenter
+            ExplicitLeft = 676
+            ExplicitHeight = 31
+          end
+        end
+        object PnlLinha: TPanel
+          Left = 6
+          Top = 328
+          Width = 692
+          Height = 3
+          Align = alClient
+          Color = clGray
+          ParentBackground = False
+          TabOrder = 5
+          StyleName = 'Windows'
+        end
+        object Panel1: TPanel
+          Left = 6
+          Top = 361
+          Width = 692
+          Height = 41
+          Align = alClient
+          BevelOuter = bvNone
           TabOrder = 0
-          TitleFont.Charset = DEFAULT_CHARSET
-          TitleFont.Color = clWindowText
-          TitleFont.Height = -20
-          TitleFont.Name = 'Segoe UI'
-          TitleFont.Style = []
+          object Label3: TLabel
+            Left = 0
+            Top = 0
+            Width = 140
+            Height = 41
+            Align = alLeft
+            Alignment = taCenter
+            Caption = 'Saldo Final'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -27
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            Layout = tlCenter
+            ExplicitHeight = 37
+          end
+          object LblSaldoFinal: TLabel
+            Left = 658
+            Top = 0
+            Width = 34
+            Height = 41
+            Align = alRight
+            Alignment = taCenter
+            Caption = 'R$'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -27
+            Font.Name = 'Segoe UI'
+            Font.Style = [fsBold]
+            ParentFont = False
+            Layout = tlCenter
+            ExplicitLeft = 674
+            ExplicitHeight = 37
+          end
         end
       end
     end
@@ -236,8 +464,8 @@ object FormCadastroPadrao: TFormCadastroPadrao
     DrawingStyle = dsTransparent
     Height = 32
     Width = 32
-    Left = 304
-    Top = 224
+    Left = 656
+    Top = 144
     Bitmap = {
       494C010106000800040020002000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000800000004000000001002000000000000080
@@ -1301,9 +1529,5 @@ object FormCadastroPadrao: TFormCadastroPadrao
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
       000000000000}
-  end
-  object DataSource1: TDataSource
-    Left = 656
-    Top = 408
   end
 end

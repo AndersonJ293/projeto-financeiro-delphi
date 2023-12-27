@@ -27,7 +27,7 @@ begin
     Result := Result + Grid.Columns.Items[LContador].FieldName +
      ' LIKE ' + QuotedStr('%' + Trim(Pesquisa) + '%') + ' OR ';
 
-    Result := ' WHERE ' + Copy(Result, 1, Length(Result) - 4);
+    Result := ' AND (' + Copy(Result, 1, Length(Result) - 4) + ') ';
 end;
 
 end.

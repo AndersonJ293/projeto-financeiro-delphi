@@ -136,7 +136,8 @@ var
 begin
   FiltroPesquisa := TPesquisaUtil.LikeFind(EditPesquisar.Text, DBGrid1);
   DmUsuarios.CdsUsuarios.Close;
-  DmUsuarios.CdsUsuarios.CommandText := 'Select * from usuarios' + FiltroPesquisa;
+  DmUsuarios.CdsUsuarios.CommandText := 'Select * from usuarios where 1 = 1' +
+    FiltroPesquisa;
   DmUsuarios.CdsUsuarios.Open;
   inherited;
 end;

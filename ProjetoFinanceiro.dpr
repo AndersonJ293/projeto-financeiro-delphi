@@ -15,7 +15,9 @@ uses
   ProjetoFinanceiro.View.RedefinirSenha in 'src\View\ProjetoFinanceiro.View.RedefinirSenha.pas' {FormRedefinirSenha},
   ProjetoFinanceiro.Util.Pesquisa in 'src\Util\ProjetoFinanceiro.Util.Pesquisa.pas',
   ProjetoFinanceiro.Model.Caixa in 'src\Model\ProjetoFinanceiro.Model.Caixa.pas' {DmCaixa: TDataModule},
-  ProjetoFinanceiro.View.Caixa in 'src\View\ProjetoFinanceiro.View.Caixa.pas' {FormCaixa};
+  ProjetoFinanceiro.View.Caixa in 'src\View\ProjetoFinanceiro.View.Caixa.pas' {FormCaixa},
+  ProjetoFinanceiro.View.CaixaSaldo in 'src\View\ProjetoFinanceiro.View.CaixaSaldo.pas' {FormCaixaSaldo},
+  ProjetoFinanceiro.Model.Entidades.CaixaResumo in 'src\Model\Entidades\ProjetoFinanceiro.Model.Entidades.CaixaResumo.pas';
 
 {$R *.res}
 
@@ -30,5 +32,6 @@ begin
   Application.CreateForm(TFormUsuarios, FormUsuarios);
   Application.CreateForm(TdmSistema, dmSistema);
   Application.CreateForm(TFormCaixa, FormCaixa);
+  Application.CreateForm(TFormCaixaSaldo, FormCaixaSaldo);
   Application.Run;
 end.

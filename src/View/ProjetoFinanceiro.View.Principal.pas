@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Winapi.CommCtrl,
-  ProjetoFinanceiro.View.Usuarios, Vcl.ComCtrls, Vcl.ExtCtrls;
+  ProjetoFinanceiro.View.Usuarios, Vcl.ComCtrls, Vcl.ExtCtrls,
+  ProjetoFinanceiro.View.CaixaSaldo;
 
 type
   TFormPrincipal = class(TForm)
@@ -17,10 +18,12 @@ type
     Timer1: TTimer;
     Financeiro: TMenuItem;
     MenuCaixa: TMenuItem;
+    MenuResumoCaixa: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure CadastroUsuarioClick(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
     procedure MenuCaixaClick(Sender: TObject);
+    procedure MenuResumoCaixaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -82,6 +85,11 @@ end;
 procedure TFormPrincipal.MenuCaixaClick(Sender: TObject);
 begin
   FormCaixa.Show;
+end;
+
+procedure TFormPrincipal.MenuResumoCaixaClick(Sender: TObject);
+begin
+  FormCaixaSaldo.Show;
 end;
 
 procedure TFormPrincipal.Timer1Timer(Sender: TObject);

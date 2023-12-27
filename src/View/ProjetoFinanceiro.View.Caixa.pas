@@ -30,6 +30,8 @@ type
     RadioTipo: TRadioGroup;
     PnlRadio: TPanel;
     PnlEdits: TPanel;
+    CbTipo: TComboBox;
+    Label2: TLabel;
     procedure ButtonSalvarClick(Sender: TObject);
     procedure ButtonAlterarClick(Sender: TObject);
   private
@@ -115,10 +117,16 @@ end;
 procedure TFormCaixa.Pesquisar;
 var
   FiltroPesquisa : string;
+  FiltroTipo : string;
 begin
+  case CbTipo.ItemIndex of
+    1 : FiltroTipo := ' AND TIPO = ''R''';
+    2 : FiltroTipo := ' AND TIPO = ''D''';
+  end;
   FiltroPesquisa := TPesquisaUtil.LikeFind(EditPesquisar.Text, DBGrid1);
   DmCaixa.CdsCaixa.Close;
-  DmCaixa.CdsCaixa.CommandText := 'Select * from caixa'+ FiltroPesquisa;
+  DmCaixa.CdsCaixa.CommandText := 'Select * from caixa where 1 = 1' +
+    FiltroPesquisa + FiltroTipo;
   DmCaixa.CdsCaixa.Open;
   inherited;
 end;

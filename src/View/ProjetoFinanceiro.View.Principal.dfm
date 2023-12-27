@@ -54,6 +54,10 @@
     end
     object Relatórios: TMenuItem
       Caption = 'Relat'#243'rios'
+      object MenuResumoCaixa: TMenuItem
+        Caption = 'Resumo Caixa'
+        OnClick = MenuResumoCaixaClick
+      end
     end
     object MenuAjuda: TMenuItem
       Caption = 'Ajuda'

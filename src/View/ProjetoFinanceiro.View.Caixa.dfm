@@ -1,13 +1,15 @@
 inherited FormCaixa: TFormCaixa
   Caption = 'Caixa'
   ClientWidth = 720
+  ExplicitWidth = 732
   TextHeight = 28
   inherited PnlPrincipal: TCardPanel
     Width = 720
-    ActiveCard = CardCadastro
+    ExplicitWidth = 714
     inherited CardCadastro: TCard
       Width = 718
       Padding.Top = 30
+      ExplicitHeight = 522
       object LblTitulo: TLabel [0]
         Left = 0
         Top = 30
@@ -25,7 +27,7 @@ inherited FormCaixa: TFormCaixa
         ExplicitWidth = 214
       end
       inherited Panel1: TPanel
-        Top = 451
+        Width = 718
       end
       object PnlEdits: TPanel
         Left = 0
@@ -35,7 +37,8 @@ inherited FormCaixa: TFormCaixa
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 1
-        ExplicitHeight = 390
+        ExplicitWidth = 712
+        ExplicitHeight = 372
         object PnlDescricao: TPanel
           Left = 32
           Top = 128
@@ -246,26 +249,59 @@ inherited FormCaixa: TFormCaixa
     inherited CardPesquisa: TCard
       Width = 718
       ExplicitWidth = 718
+      ExplicitHeight = 531
       inherited PnlPesquisa: TPanel
         Width = 718
+        ExplicitWidth = 718
+        object Label2: TLabel [1]
+          Left = 398
+          Top = 3
+          Width = 39
+          Height = 28
+          Caption = 'Tipo'
+        end
         inherited EditPesquisar: TEdit
           TextHint = 'N'#186' Doc, Data, Descri'#231#227'o'
         end
+        inherited ButtonPesquisar: TButton
+          Top = 18
+          Height = 45
+          ExplicitTop = 18
+          ExplicitHeight = 45
+        end
+        object CbTipo: TComboBox
+          Left = 398
+          Top = 30
+          Width = 145
+          Height = 36
+          Style = csDropDownList
+          ItemIndex = 0
+          TabOrder = 2
+          Text = 'Todos'
+          Items.Strings = (
+            'Todos'
+            'Receita'
+            'Despesas')
+        end
       end
       inherited PnlPesquisaBotoes: TPanel
-        Top = 460
         Width = 718
+        ExplicitTop = 451
+        ExplicitWidth = 718
         DesignSize = (
           718
           80)
         inherited ButtonIncluir: TButton
           Width = 130
+          ExplicitWidth = 130
         end
       end
       inherited PnlGrid: TPanel
         Width = 718
-        Height = 380
+        ExplicitWidth = 718
+        ExplicitHeight = 371
         inherited DBGrid1: TDBGrid
+          Width = 716
           Columns = <
             item
               Expanded = False

@@ -5,12 +5,10 @@ inherited FormUsuarios: TFormUsuarios
     ActiveCard = CardCadastro
     inherited CardCadastro: TCard
       Padding.Top = 30
-      ExplicitWidth = 712
-      ExplicitHeight = 531
       object LblTitulo: TLabel [0]
         Left = 0
         Top = 30
-        Width = 718
+        Width = 712
         Height = 40
         Align = alTop
         Alignment = taCenter
@@ -22,10 +20,6 @@ inherited FormUsuarios: TFormUsuarios
         Font.Style = [fsBold]
         ParentFont = False
         ExplicitWidth = 246
-      end
-      inherited Panel1: TPanel
-        ExplicitTop = 451
-        ExplicitWidth = 712
       end
       object Panel9: TPanel
         Left = 209
